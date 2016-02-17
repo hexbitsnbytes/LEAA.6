@@ -9,3 +9,5 @@ passwd -e invite # -e pour forcer le changement de passwd au prochain login
 groupadd -g 1001 invites
 usermod -g invites
 
+Ahmed pense que c'est pourri
+
