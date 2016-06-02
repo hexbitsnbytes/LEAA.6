@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+#
 # This aims to be a batch file to be used to create users and configure their group membership and pw info
 # Class: TP01 - Linux Administration
 # 
