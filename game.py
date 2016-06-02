@@ -1,9 +1,3 @@
-# First python program. For fun. And to learn the syntax and finally put some time in coding.
-#	-- First draft --
-# TO DO	: learn about equivalent to case structure
-# 	  find how to pause the screen until user input
-#	  
-#
 import sys
 import time
 import os
@@ -47,16 +41,6 @@ elif user_choice == str("b").lower():
 elif user_choice.lower() == "c":
 	print("bad decision... They saw your act. You loose one hp")
 	hp = 19
-	print ("HP = 19")
+	print (HP) 
 elif user_choice.lower() == str("d") or str("exit"):
-
 	exit
-
-#while user_control == str(""):
-#	time.sleep(0)
-#else:
-#	os.system('clear')
-#
-#print choice2
-#time.sleep(5)
-#os.system('clear')
