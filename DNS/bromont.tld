@@ -1,0 +1,22 @@
+$TTL 6400
+bromont.tld. IN SOA	zeus.bromont.tld. root.zeus.bromont.tld. (
+					0
+					21600
+					3600
+					604800
+					86400
+	)
+;
+; Name servers
+;
+bromont.tld.	IN NS	zeus.bromont.tld.
+;
+; Addresses for the canonical names
+;
+localhost.bromont.tld.	IN A	127.0.0.1
+zeus		IN A	192.168.24.1
+zeus		IN A	172.16.24.1
+zeus		IN A	192.168.11.235
+aphrodite	IN A	192.168.24.150
+;
+;
