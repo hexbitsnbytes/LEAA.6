@@ -1,0 +1,4 @@
+cu;nom;prenom;service;fonction;Ppw123aaaaaaa@
+cu;louis;loui-nicolas;IT;admin;1234PdeEaaaaaaa@
+cu;uprichardl;lucy;writing;writer;12345Pedfeaaaaaaa@
+cu;morina;albert;managemcnt;boss;4321PefgtTaaaaa@
