@@ -28,4 +28,5 @@ while (<PASSWD>) {
     $sth->execute( $nom_user, $id_user, $id_group, $gecos, $working_dir, $exec);
 }    
 
+$dbh->disconnect;
 close PASSWD;

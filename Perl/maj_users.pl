@@ -41,3 +41,5 @@ $dbh = DBI->connect( $dsn, $username, $password
 # Création des enregistrements dans la base de donnée
 $sth = $dbh->prepare("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?)"); # sth = Statement Handle Object
 $sth->execute( $nom_user, $id_user, $id_group, $gecos, $working_dir, $exec);
+
+$dsh->disconnect;
