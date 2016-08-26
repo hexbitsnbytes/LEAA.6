@@ -1,0 +1,196 @@
+# =================================================
+I - Prérequis
+# =================================================
+
+Vérifier si mysql est installer
+
+    # mysql
+    
+Sinon : Installation de mysql
+
+    # yum install mysql*
+    
+Installation du module MySQL-python
+
+    # yum install  MySQL-python
+    
+# =================================================
+II - Test de connexion avec la base "test" de mysql
+# =================================================
+
+
+#!/usr/bin/python
+# -*- coding=utf-8 -*- 
+import sys 
+# import du module MySQLdb 
+import MySQLdb 
+# connexion à une base MySql 
+# l'identité de l'utilisateur est (vide,vide) 
+user="" 
+pwd="" 
+host="localhost" 
+connexion=None 
+nom_base="test"      #  A changer eventuellemet
+try: 
+	print "connexion..." 
+	# connexion 
+	connexion=MySQLdb.connect(host=host,user=user,passwd=pwd,db=nom_base) 
+	print "Connexion a MySQL reussie sous l'identite host={0},user={1},passwd={2}".format(host,user,pwd) 
+except MySQLdb.OperationalError,message: 
+	print "Erreur : {0}".format(message) 
+    sys.exit()
+
+connexion.close() 
+
+# =================================================
+III - Création d'une base de données "utilisateurs avec un script SQL"
+# =================================================
+
+# Creer une base de données "utilisateurs"
+# Avec comme table "users" 
+
+# Avec la structure suivante :
+
+user char(20) not null,
+fil1 char(1),
+uid int,
+gid int,
+infos char(30),
+rep_home char(30),
+prog_login char(30);
+
+# Charger la table avec load data
+
+# ======================================================================================================
+IV - Script python pour lister le contenu de la table "users" de la base de données "utilisateurs"
+# ======================================================================================================
+
+# Ecrire un script python qui va lister la table "users" de la base de données "utilisateurs"
+
+# Travail à réaliser :
+        
+#            Prevoire les erreurs dans la requete SQL ,
+#            Rajouter và la requete SQL une selection ( clause where )
+#
+#            Prevoire le cas ou le resultat est nul
+#=====================================================
+V - Utilisation d'un browser pour afficher le résultat
+#=====================================================
+
+# But :  Utilisation du langage python pour produire une page web (html) ,
+#        résultat de l'interrogation de la base de données
+#
+# Code Python
+#
+#!/usr/bin/python
+# -*- coding=utf-8 -*- 
+import sys 
+import os
+import HTML
+# import du module MySQLdb 
+import MySQLdb as db
+# connexion à une base MySql 
+user="" 
+pwd="" 
+host="localhost" 
+connexion=None 
+nom_base="utilisateurs"
+try: 
+	print "connexion..." 
+	# connexion 
+	connexion=db.connect(host=host,user=user,passwd=pwd,db=nom_base) 
+	# suivi 
+	print "Connexion a MySQL reussie sous l'identite host={0},user={1},passwd={2},db={3}".format(host,user,pwd,nom_base) 
+except db.OperationalError,message: 
+	print "Erreur : {0}".format(message)
+	sys.exit()
+
+fic=open("page.html","w")
+fic.write('<html><head><title>Python et Mysql</title></head>')
+fic.write('<body><h2>Liste des utilisateurs</h2>')
+entete = ["User Name","Uid","Gid","Rep_Connexion","Programme"]
+table_data = [  entete ]
+sql="SELECT * FROM users"
+cursor = connexion.cursor()
+try:
+   cursor.execute(sql)
+   results = cursor.fetchall()
+   for row in results:
+        table_data.append([row[0],row[2],row[3],row[5],row[6]])
+except:
+   print "Erreur : aucune donnée disponible"
+
+# disconnect from server
+connexion.close()
+htmlcode = HTML.table(table_data)
+fic.write(htmlcode)
+fic.write('</body></html>')
+fic.close()
+os.system("opera page.html")
+
+# Travail a faire : Commentez ce script
+
+#================================
+# VI - Module graphique sous python
+#================================
+
+# But : Utilisation du module tkinter pour utiliser des interfaces graphique (Boites de dialogues)
+#
+# L'exemple suivant met en jeu la connexion à une base de données mysql et le module graphique tkinter
+#
+#=================
+#!/usr/bin/python
+# -*- coding=utf-8 -*- 
+import sys 
+import Tkinter
+# import du module MySQLdb 
+import MySQLdb as db
+# connexion à une base MySql 
+user="" 
+pwd="" 
+host="localhost" 
+connexion=None 
+nom_base="utilisateurs"
+try: 
+	print "connexion..." 
+	# connexion 
+	connexion=db.connect(host=host,user=user,passwd=pwd,db=nom_base) 
+	# suivi 
+	print "Connexion a MySQL reussie sous l'identite host={0},user={1},passwd={2},db={3}".format(host,user,pwd,nom_base) 
+except db.OperationalError,message: 
+	print "Erreur : {0}".format(message)
+	sys.exit()
+
+root = Tkinter.Tk()
+root.title("Liste des Utilisateurs")
+
+entete = ["User Name","x","Uid","Gid","Gecos","Rep_Connexion","Programme"]
+taille=[15,1,5,5,30,30,20]
+pos=0
+for i in range(len(entete)):
+    fmt="%"+str(taille[i])+"s"
+    Tkinter.Label(root, text=fmt % (entete[i]),borderwidth=0,font =("Helvetica", "8") ).grid(row=1,column=pos)
+    pos = pos + taille[i] 
+
+sql="SELECT * FROM users "
+cursor = connexion.cursor()
+try:
+   j = 2
+   cursor.execute(sql)
+   results = cursor.fetchall()
+   for row in results:
+        pos = 0
+        for i in range(len(row)):
+            fmt="%-"+str(taille[i])+"s"
+            Tkinter.Label(root, text=fmt % (row[i]),borderwidth=0,font =("Helvetica", "8") ).grid(row=j,column=pos)
+            pos = pos + taille[i]
+        j = j + 1
+except:
+   print "Erreur : aucune donnée disponible"
+   sys.exit()
+root.mainloop()
+# disconnect from server
+connexion.close()
+
+# Travail à faire : Modifier ce script , pour ajouter le scrolling
+
