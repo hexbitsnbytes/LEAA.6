@@ -1,0 +1,202 @@
+/*  page css pour le site www.jchr.be  */
+
+/*
+@media (max-width: 1640px) {
+    h6 { font-size:12pt; }
+    }
+*/
+
+body { 
+  font-family:sans-serif, "ipapmincho";
+  background:#f0f0f0; color:#000;
+  font-size:12pt; margin:3px; }
+
+/* par défaut ou lien vers une page interne: liens framboises */
+a, a.p { color:#b05; font-weight:bold; text-decoration:none }
+a.x { color:#008; text-decoration:underline } /* liens extérieurs: bleus et soulignés */
+a.i { color:#070 } /* lien vert explicite: class="i" */
+
+/*  H E A D E R  navigation au dessus du titre  */
+header { font-size:12pt; padding:0.1em .5em .15em; border-bottom:solid 1px #aaa }
+header.a { font-size:12pt; }
+a.ssr { font-size:12pt; float:right; color:#777; font-weight:normal; font-style:italic } /* site sans pub en gris */
+
+/*  S E C T I O N  pour pages ayant beaucoup de liens vers d'autres pages du site */
+section { clear:both; margin:0 }
+
+/*  A R T I C L E   pour pages ayant beaucoup de liens internes */
+article { clear:both; margin:0 }  /*  */
+article a { color:#090 } /*  lien interne à la page en vert par défaut  */
+
+/*  F O O T E R  pour le moment, réduit à une balise vers le haut de la page  */
+footer { border-top:1px solid #888; margin-top:.5em; padding: .2em .3em .1em; clear:both }
+footer a { color:#090 } /* toujour un lien interne à la page */
+
+
+/*  G É N É R A L I T É S  */
+
+h1 { font-size:16pt; font-style:italic; 
+     margin:.1em .2em 6pt; color:#444 }
+h2 { font-size:16pt; margin:.5em .25em .5em; color:#333; clear:both; }
+h3 { font-size:14pt; margin:.5em .5em .3em; color:#222; clear:both; }
+h4 { font-size:13pt; margin:.5em .75em .5em; color:#111 }
+/* titre sacrifié pour un texte en petit, souvent un sous-titre  */
+h5 { font-size:10pt; font-weight:normal; margin:-.3em 1em .5em; }
+h6 { /* titre sacrifié pour lettrine X2 */
+   float:left; font-family:serif; color:#000;
+   font-size:3em; margin:-6pt .1em -.2em .315em;
+   }
+
+p { font-size: 12pt; margin:0 1em 6pt; text-align:justify; }
+p.fg { margin-right:.5em; float:left }
+p.fd { margin-left:.5em; float:right }
+p.q { text-align:justify; margin:0 1em .5em; padding:.5em .7em;
+      border:1px #fff solid; border-bottom:1px #bbb solid; 
+      border-right:1px #bbb solid; padding:.5em .7em .4em }
+p.q2 { text-align:justify; margin:0 1em .5em; padding:.5em .7em;
+      border:2px #fff solid; border-bottom:2px #777 solid; ; 
+      padding:.5em .7em .4em }
+p.a { text-align:justify; margin:0 1em .5em; padding:.5em .7em;
+      border:2px #f05 ridge; padding:.5em .7em .4em }
+p.a2 { text-align:justify; margin:0 1em .5em; padding:.5em .7em;
+      border:4px #f05 ridge; padding:.5em .7em .4em }
+
+
+
+p.tt { font-family:monospace; background:#fff; padding:.5em .7em; text-align:left; font-size:11pt; }
+
+p.alt { background:#beb; padding:.3em .5em; border:solid 1px #7b7;
+        border-bottom:1px solid #fff; border-right:1px solid #fff; }
+span.alt { background:#beb; }
+pre.alt { background:#cfc; border:solid 1px #9e9; 
+          border-bottom:1px solid #fff; border-right:1px solid #fff; }
+p.alt a:hover { color:#705; }
+
+div { margin:0; padding:0; }
+div.menu { float:left; margin:0 0 0 1em; } 
+div.stop { clear:both; }
+
+div.fg { float:left; padding:0; }
+div.fd { float:right; padding:0; }
+
+pre {
+    font-size:11pt; background:#f7f7f7; font-family:monospace;
+    border:solid 1px #ddccff; margin:0 1em .5em; padding:.5em .5em .4em;
+    border-bottom:solid 1px #ffffdd; border-right:solid 1px #ffd
+    }
+
+/*  L I S T E S  */
+ol, ul { margin:0 1em .5em .5em; text-align:justify; }
+ul ul { margin:0; padding:0 1.7em 0; }
+
+ul.fg { float:left; padding:0 0 .5em 1em }
+ul.fd { float:right; padding:0 1em .5em 0 }
+
+dl { margin:0 1em; text-align:justify }
+dt { font-weight:bold; margin-bottom:.3em; text-align:justify }
+dd { margin:0 0 .5em 1.5em }
+
+
+/* nouvelles définitions des tables  */
+/* sans bord, th gras centré, td à gauche */
+table { margin:0 1em .5em; border-collapse:collapse }
+
+.tg { float:left }
+.td { float:right }
+.b0, table.b0 th, table.b0 td { border:none }
+.b1, table.b1 th, table.b1 td { border:solid 1px #777 }
+
+table.hg th { text-align:left }
+table.hc th { text-align:center }
+table.hd th { text-align:right }
+table.hj th { text-align:justify }
+
+table.ht th { vertical-align:top }
+table.hm th { vertical-align:middle }
+table.hb th { vertical-align:bottom }
+
+table.dg td { text-align:left }
+table.dc td, td.dc { text-align:center }
+table.dd td { text-align:right }
+table.dj td { text-align:justify }
+
+table.dt td { vertical-align:top }
+table.dm td { vertical-align:middle }
+table.db td { vertical-align:bottom }
+
+/* anciennes tables */
+
+table.fd { float:right; margin:0 1em .5em .75em; }
+table.fg { float:left; margin:0 .75em .5em 1em; }
+td { vertical-align:top; padding:.1em .2em; border:0px solid #777; }
+td.d { text-align:right }
+th { vertical-align:top; padding:.1em .2em; text-align:center }
+
+table.tr tr { border-top:1px solid #999 }
+table.tr th { border-right:1px solid #999 }
+
+
+/* par défaut, { vertical-align:super } (alt: sub)
+augmente localement la hauteur de la ligne,
+brisant l'harmonie du paragraphe
+*/
+sup { font-size:8pt; vertical-align:top }    /* exposant */
+sub { font-size:8pt; vertical-align:bottom } /* indice bas */
+
+em { font-weight:bold; font-style:italic }
+kbd { font-weight:bold }
+
+br.h { margin-bottom:.5em; }
+hr { margin:.7em 2.5em; }
+
+/*  IMG  */
+img { margin:0em 0em 0em 0em; border:none }
+img.fg { float:left; margin:0 1em .5em } /* image contournée à droite */
+img.fd { float:right; margin:0 1em .5em } /* img contournée à gauche */
+
+/* CLASSES LIBRES */
+
+.cl { clear:both; }
+/* citation */
+.q { margin:0 0 .5em; padding:.35em .6em .4em; background:#eee; border:solid 1px #fff; border-top:1px solid #d0d0d0; border-left:1px solid #d4d4d4 }
+
+/* petite fonte */
+.s { font-size:10pt }  /* margin-top:-.6em; */
+
+/* aligner à droite (phrases et cellules) */
+.d { text-align:right }
+.c { text-align:center }
+
+/* couleurs */
+.r { color:#d03 }  /* rouge */
+.v { color:#080 }  /* vert  */
+.b { color:#00a }  /* bleu  */
+.g { color:#666 }  /* gris  */
+.w { color:#fff }  /* blanc */
+.m { color:#509 }  /* mauve */
+.k { color:#000 }  /* noir  */
+
+/* 
+ POST-IT - remplace le très limité <abbr>, en sacrifiant <s>
+ Utilisation sur la page html: 
+ <s>texte à survoler<u>texte pop-up</u></s>
+ au lieu de 
+ <abbr title="texte pop-up">texte à survoler</abbr>
+*/
+s { text-decoration:none } /* suppression des guillemets */
+s { color:#00a } /* couleur du texte (toujours visible) à survoler */
+s:hover, s:active { color:#0; background:#fff } /* couleur du texte survolé */
+s s { display:none; text-decoration:none } /* contenu caché, sans souligné */
+s:hover s, s:active s /* formatage de ce qui apparaît lorsque le texte est survolé */
+{ display:inline; position:absolute;
+  color:#eee; background:#336;
+  padding:1px 6px 2px; margin: -1.5em 0 0em -.3em; }
+/* s:hover pour un survol, ajout de s:active pour le doigt sur un écran tactile */
+
+
+/* FORMULAIRES */
+
+form { margin:0 }
+input, textarea { background:#eee; color:#009;	}
+input.envoi { background:#d07; font-weight:bold; color:#fff }
+

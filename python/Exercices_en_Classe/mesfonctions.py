@@ -32,3 +32,15 @@ def get_num():
 
 def pause():
     raw_input("Appuyez sur une touche pour continuer...")
+
+def pause2():
+    import os
+    a=os.system("read -n 1 -p 'Appuyez sur une touche'...")
+
+def webget_python(link):
+	import urllib2
+	u=urllib2.urlopen(link)
+	pdb_lines=u.readlines()
+	u.close()
+	for line in pdb_lines:
+	    print line,

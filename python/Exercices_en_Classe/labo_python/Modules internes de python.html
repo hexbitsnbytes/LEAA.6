@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://www.jchr.be/python/modules.htm -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Modules internes de python</title>
+<meta name="author" content="www.jchr.be">
+<meta name="description" content="Documentation sur des modules internes au langage python">
+<meta name="keywords" content="python, programmation, modules internes, modules, presentation">
+<link rel="stylesheet" href="./Modules internes de python_files/jchr.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="home" title="Sommaire" type="text/html" href="http://www.jchr.be/sommaire.htm">
+</head><body>
+
+<header>
+<a href="http://www.jchr.be/politique/site-sans-reclame.htm" class="ssr">site sans réclame</a>
+<a href="http://www.jchr.be/python/index.htm">Python</a> •
+<a href="http://www.jchr.be/courriel.php">Cont@ct</a> •
+<a href="http://www.jchr.be/email.php">S'abonner</a>
+</header>
+
+<article>
+
+<h1>Modules internes du langage python - www.jchr.be</h1>
+
+<h6>C</h6>
+<p><b>
+ERTAINES fonctions basiques ne figurent pas dans les instructions de python, mais sont disponibles dans les bibliothèques. Cette page présente quelques modules importants, et internes au langage python 2.x <span class="alt">et python 3.x</span>, c'est-à-dire qu'ils sont installés avec python. Cette page ne prétend aucunement à l'exhaustivité.
+</b></p><p>
+Quelques modules externes:
+<a href="http://www.jchr.be/python/tkinter.htm" class="p">TKinter</a> -
+<a href="http://www.jchr.be/python/ecma-48.htm" class="p">ECMA-48</a> (print at, color)
+
+
+</p><div class="fg">
+<h4><a href="http://www.jchr.be/python/modules.htm#notions">0.</a> Préalables importants</h4>
+
+<h4><a href="http://www.jchr.be/python/modules.htm#systeme">1.</a> Système</h4>
+<p>
+<a href="http://www.jchr.be/python/modules.htm#sys">1.1</a> <kbd>sys</kbd><br>
+<a href="http://www.jchr.be/python/modules.htm#time">1.2</a> <kbd>time</kbd><br>
+<a href="http://www.jchr.be/python/modules.htm#os">1.3</a> <kbd>os</kbd> et <kbd>os.path</kbd>
+
+
+</p><h4><a href="http://www.jchr.be/python/modules.htm#nombres">2.</a> Nombres</h4>
+<p>
+<a href="http://www.jchr.be/python/modules.htm#math">2.1</a> <kbd>(c)math</kbd> (trigo, log)<br>
+<a href="http://www.jchr.be/python/modules.htm#random">2.2</a> <kbd>random</kbd> (hasard)<br>
+<a href="http://www.jchr.be/python/modules.htm#decimal">2.3</a> <kbd>decimal</kbd>
+
+
+</p></div><div class="fg">
+
+<h4><a href="http://www.jchr.be/python/modules.htm#chaines">3.</a> Chaînes</h4>
+<p>
+<a href="http://www.jchr.be/python/modules.htm#string">3.1</a> <kbd>string</kbd> (chaînes)<br>
+<a href="http://www.jchr.be/python/modules.htm#unicode">3.2</a> <kbd>unicode</kbd> (chaînes)<br>
+<a href="http://www.jchr.be/python/modules.htm#re">3.3</a> <kbd>re</kbd> (expressions régulières)<br>
+<a href="http://www.jchr.be/python/modules.htm#curses">3.4</a> <kbd>curses</kbd> (affichage console)
+
+
+</p><h4><a href="http://www.jchr.be/python/modules.htm#collections">4.</a> Collections</h4>
+
+<p>
+<a href="http://www.jchr.be/python/modules.htm#deque">4.1</a> <kbd>deque</kbd><br>
+<a href="http://www.jchr.be/python/modules.htm#counter">4.2</a> <kbd>Counter</kbd><br>
+<a href="http://www.jchr.be/python/modules.htm#ordered">4.3</a> <kbd>OrderedDict</kbd>
+
+
+</p></div><div class="fg">
+
+<h4><a href="http://www.jchr.be/python/modules.htm#donnees">5.</a> Sauvegarde des données</h4>
+<p>
+<a href="http://www.jchr.be/python/modules.htm#pickle">5.1</a> <kbd>(c)pickle</kbd><br>
+<a href="http://www.jchr.be/python/modules.htm#anydbm">5.2</a> <kbd>anydbm</kbd><br>
+<a href="http://www.jchr.be/python/modules.htm#shelve">5.3</a> <kbd>shelve</kbd>
+
+
+</p><h4><a href="http://www.jchr.be/python/modules.htm#internet">6.</a> Internet</h4>
+<p>
+<a href="http://www.jchr.be/python/modules.htm#urllib">6.1</a> <kbd>urllib</kbd> (téléchargement)
+
+</p></div>
+
+<h3 class="cl">Autres modules (.en)</h3>
+<p>
+<kbd><a href="http://docs.python.org/library/base64.html" class="x">base64</a></kbd>,
+<kbd><a href="http://docs.python.org/library/uu.html" class="x">uu</a></kbd>,
+<kbd><a href="http://docs.python.org/library/binhex.html" class="x">binhex</a></kbd> et
+ <kbd><a href="http://docs.python.org/library/binascii.html" class="x">binascii</a></kbd>
+pour divers encodages<br>
+<kbd><a href="http://docs.python.org/library/datetime.html" class="x">datatime</a></kbd> et
+ <kbd><a href="http://docs.python.org/library/calendar.html" class="x">calendar</a></kbd> <br>
+<kbd><a href="http://docs.python.org/library/fractions.html" class="x">fractions</a></kbd> <br>
+<kbd><a href="http://docs.python.org/library/htmlparser.html" class="x">htmlparser</a></kbd> et<kbd>
+<a href="http://docs.python.org/library/urllib2.html" class="x">urllib2</a></kbd>
+
+
+</p><h2 id="notions"><a href="http://www.jchr.be/python/modules.htm#">0.</a> Notions capitales relatives à tous les modules</h2>
+<p>
+Les fonctions spécialisées ont été regroupées dans des modules. Beaucoup de ceux-ci font partie intégrante de python (modules internes), mais il est nécessaire de les appeler au préalable pour avoir accès à leurs fonctions.
+</p><p>
+<kbd>import <i>module</i></kbd> charge un module appelé module.py<br>
+<kbd><i>module.methode</i>()</kbd> la méthode doit alors être préfixée du nom du module lors de chaque utilisation.
+</p><p>
+<kbd>import <i>module</i> as <i>alias</i></kbd> permet d'utiliser un alias plus explicite ou plus court:
+</p><pre>&gt;&gt;&gt; import math as M
+&gt;&gt;&gt; print M.pi           # au lieu de 'print math.pi'
+</pre><p>
+<kbd>from <i>module</i> import <i>methode</i></kbd> charge une méthode précise du module, qui ne devra plus être préfixée<br>
+<kbd>from <i>module</i> import *</kbd> charge toutes les méthode d'un module, qui ne devront donc pas être préfixées. Attention aux synonymes, comme <kbd><a href="http://www.jchr.be/python/modules.htm#os">os.open()</a></kbd> et <kbd><a href="http://www.jchr.be/python/manuel.htm#fichtxt" class="p">open()</a></kbd>, qui ne requièrent pas les mêmes paramètres.
+
+
+</p><p style="border:2px solid #e04; padding:5px 9px">
+Ne nommez jamais un script du nom d'un module à importer: avant d'aller chercher à l'adresse <kbd>/usr/lib/python…</kbd>, python cherche d'abord le module du même nom + <kbd>.py</kbd> dans le répertoire courant, et le script s'importerait lui-même. Si cela est arrivé, il ne suffit pas de changer le nom du script, il faut également supprimer le fichier <kbd>.pyc</kbd> qui a été généré lors de l'appel au module. Python aurait dû prévoir le problème et obliger l'importation d'un module du répertoire courant avec <kbd>import ./<i>module</i>.py</kbd>
+
+
+</p><h4>Informations sur les modules et ses méthodes:</h4>
+<p>
+<kbd>dir()</kbd> liste les modules chargés<br>
+<kbd>dir(<i>module</i>)</kbd> liste les méthodes et constantes d'un module chargé<br>
+<kbd><i>module.methode</i>.__doc__</kbd> documente la méthode d'un module chargé<br>
+<kbd>print <i>module</i>.__file__</kbd> renvoie la localisation du module sur votre système<br>
+<kbd>help(<i>module</i>)</kbd> renvoie des informations sur les méthodes d'un module<br>
+<kbd>help(<i>module.methode</i>)</kbd> renvoie des informations sur une méthode particulière
+
+
+</p><h4>Sous-modules</h4>
+<p>
+Certains modules (comme <kbd>os</kbd>) contient des sous-modules (comme <kbd>os.path</kbd>). Il faut en tenir compte lors de l'appel d'une méthode de ce sous-module:
+</p><pre>&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.split("/home/toto/index.htm")
+('/home/toto','index.htm')
+</pre><p>
+Il est possible de charger un sous-module sous forme d'alias:
+</p><pre>&gt;&gt;&gt; import os.path as P
+&gt;&gt;&gt; P.split("/home/toto/index.htm")
+</pre><p>
+Il est encore possible de charger toutes les méthodes d'un sous-module, qui ne devront plus être préfixées:
+</p><pre>&gt;&gt;&gt; from os.path import *
+&gt;&gt;&gt; split("/home/toto/index.htm")
+</pre><p>
+Attention: <kbd>from os import *</kbd> importe les méthodes du module et les sous-modules, mais il sera nécessaire de préfixer les méthodes du sous-module:
+</p><pre>&gt;&gt;&gt; from os import *
+&gt;&gt;&gt; path.split("/home/toto/index.htm")
+</pre>
+
+<h2 id="systeme"><a href="http://www.jchr.be/python/modules.htm#">1.</a> Système</h2>
+
+<h3 id="sys"><a href="http://www.jchr.be/python/modules.htm#">1.1</a> <kbd>sys</kbd> (système)</h3>
+<p>
+<kbd>sys.platform</kbd> affiche la description du système d'exploitation<br>
+<kbd>sys.version</kbd> affiche la version de python et du compilateur C<br>
+<kbd>sys.hexversion</kbd> affiche la version exprimée en hexadécimal<br>
+<kbd>sys.copyright</kbd> affiche le copyright<br>
+<kbd>sys.path</kbd> renvoie une liste des chemins d'accès de python (<kbd>/usr/lib/python2.5</kbd>...)<br>
+<kbd>sys.maxint</kbd> affiche le format du plus grand nombre entier<br>
+<kbd>sys.exit()</kbd> pour quitter le programme (ou le shell)
+</p><p>
+<kbd>sys.argv</kbd> est la liste des paramètres passés dans la ligne de commande (<kbd>argv[0]</kbd>  contient le <kbd>chemin/nom</kbd> du script):
+</p><pre>for x in sys.argv:
+  print x
+</pre><p>
+Pour déterminer le chemin du répertoire où se situe un script lancé par un double clic:
+</p><pre>import os,sys
+chemin=os.path.dirname(sys.argv[0])+"/"
+</pre><p>
+<kbd>stdout</kbd> permet de rediriger les sorties vers un fichier:
+</p><pre>import sys
+svg=sys.stdout # sauvegarde de la sortie normale (console)
+sys.stdout=open('fichier','a') # ouverture en ajout
+print "Ce que vous voulez"
+sys.stdout.close()
+sys.stdout=svg # restauration de la sortie normale (console)
+</pre><p>
+<kbd>sys.stdout.flush()</kbd> force l'écriture en cas de bufférisation (passage provisoire des données en mémoire avant écriture sur disque)
+
+
+</p><h3 id="time"><a href="http://www.jchr.be/python/modules.htm#">1.2</a> <kbd>time</kbd> (temps)</h3>
+<p>
+Dans la plupart des méthodes qui suivent, l'empreinte temporelle (timestamp) est le nombre de secondes qui séparent une date du début de l'ère Unix, le 01.01.1970 à 00:00:00 UT. L'intervalle géré sur un PC court du vendredi 13 décembre 1901 à 20h45:52 (<nobr>-2147483648</nobr>) au mardi 19 janvier 2038 à 04:14:07 (2147483647), soit les limites d'un entier signé codé sur 32 bits.
+</p><p>
+<kbd>time.sleep(sec)</kbd> marque une pause du programme pendant sec secondes
+</p><p><!--OK-->
+<kbd>time.time()</kbd> retourne l'empreinte temporelle du présent sous forme de réel<br><!--OK-->
+<kbd>time.clock()</kbd> en Unix, retourne le temps écoulé pour le processus en cours; en Windows, depuis le dernier appel par <kbd>clock()</kbd>; plus fiable que <kbd>time()</kbd> pour tester l'optimisation des routines. Voir également le module <a href="http://www.jchr.be/python/modules.htm#timeit">timeit</a>.
+</p><p>
+<kbd>time.ctime(ts)</kbd> convertit une empreinte temporelle ou à défaut, le temps présent, en chaîne "jour-de-semaine mois jour hh:mm:ss année". Les jours de la semaine sont: Mon, Tue, Wed, Thu, Fri, Sat et Sun; les mois sont: Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec.<!--OK-->
+</p><p>
+<kbd>time.localtime()</kbd> convertit une empreinte temporelle, ou à défault le moment présent, en tuple «temps local» (année, mois, jour, heures(24), minutes, secondes, jour de la semaine (0=lundi), jour de l'année (1-366), 1 si décalage de l'heure d'été)<br><!--OK-->
+<kbd>time.gmtime()</kbd> convertit une empreinte temporelle, ou à défault le moment présent, en tuple «temps universel» (année, mois, jour, heures(24), minutes, secondes, jour de la semaine (0=lundi), jour de l'année (1-366), 1 si décalage de l'heure d'été)
+</p><p>
+Les valeurs du tuple retourné par ces deux méthodes sont accessibles par l'index, ou par les attributs de classe du tuple:
+
+</p><table><tbody><tr><td>
+time.localtime()[0]</td><td>time.localtime().tm_year</td><td>année en quatre chiffres
+</td></tr><tr><td>
+time.localtime()[1]</td><td>time.localtime().tm_mon</td><td>mois de 1 à 12
+</td></tr><tr><td>
+time.localtime()[2]</td><td>time.localtime().tm_mday</td><td>jour de 1 à 31
+</td></tr><tr><td>
+time.localtime()[3]</td><td>time.localtime().tm_hour</td><td>nombre d'heures de 0 à 23
+</td></tr><tr><td>
+time.localtime()[4]</td><td>time.localtime().tm_min</td><td>nombre de minutes de 0 à 59
+</td></tr><tr><td>
+time.localtime()[5]</td><td>time.localtime().tm_sec</td><td>nombre de secondes de 0 à 61
+</td></tr><tr><td>
+time.localtime()[6]</td><td>time.localtime().tm_wday</td><td>jour de la semaine en chiffre (lundi=0)
+</td></tr><tr><td>
+time.localtime()[7]</td><td>time.localtime().tm_yday</td><td>jour de l'année de 1 à 366
+</td></tr><tr><td>
+time.localtime()[8]</td><td>time.localtime().tm_isdst</td><td>1 en cas de jour en période d'heure d'été
+</td></tr></tbody></table>
+
+<p>
+<kbd>time.asctime()</kbd> convertit un tuple au format <kbd>localtime/gmtime</kbd> en chaîne au format <kbd>ctime</kbd><br>
+<kbd>time.mktime()</kbd> convertit un tuple au format <kbd>localtime/gmtime</kbd> en empreinte temporelle
+</p><p>
+<kbd>time.strftime(format[,tuple])</kbd> retourne une chaîne selon un formatage et un tuple de date (ou à défaut, le temps présent). Le format peut contenir:
+
+</p><table><tbody><tr><td>
+%%</td><td>pour afficher le caractère <kbd>%</kbd>
+</td></tr><tr><td>
+%a</td><td>pour Mon, Tue, Wed, Thu, Fri, Sat ou Sun
+</td></tr><tr><td>
+%A</td><td>pour Monday, Tuesday, Wednesday, Thursday, Friday, Saturday ou Sunday
+</td></tr><tr><td>
+%b</td><td>pour Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov ou Dec
+</td></tr><tr><td>
+%B</td><td>pour January, February, March, April, May, June, July, Augustus, September, October, November ou December
+</td></tr><tr><td>
+%c</td><td>la date et l'heure au format <kbd>ctime()</kbd>
+</td></tr><tr><td>
+%C</td><td>(non documenté mais valide en python 2.7) 19 ou 20: les deux premiers chiffres de l'année en quatre chiffres
+</td></tr><tr><td>
+%d</td><td>le jour du mois, de 01 à 31
+</td></tr><tr><td>
+%D</td><td>(non documenté mais valide en python 2.7) voir %x
+</td></tr><tr><td>
+%H</td><td>l'heure en chiffres, de 01 à 23
+</td></tr><tr><td>
+%I</td><td>l'heure en chiffres, de 01 à 12
+</td></tr><tr><td>
+%p</td><td>AM ou PM (sic)
+</td></tr><tr><td>
+%P</td><td>am ou pm (sic)
+</td></tr><tr><td>
+%j</td><td>le jour de l'année, de 001 à 366
+</td></tr><tr><td>
+%m</td><td>le mois en chiffres, de 01 à 12
+</td></tr><tr><td>
+%M</td><td>la minute en chiffres, de 00 à 59
+</td></tr><tr><td>
+%s</td><td>(non documenté mais valide en python 2.7) empreinte temporelle sous forme de chaîne
+</td></tr><tr><td>
+%S</td><td>la seconde, en chiffres, de 00 à 61 (il peut exister des secondes additionnelles en fin de semestre)
+</td></tr><tr><td>
+%u</td><td>(non documenté mais valide en python 2.7) le jour de la semaine en chiffre, de 1 (lundi) à 7 (dimanche)
+</td></tr><tr><td>
+%U</td><td>la semaine (commençant par un dimanche) en chiffre, de 00 à 53; les jours avant le premier dimanche appartiennent à la semaine 00
+</td></tr><tr><td>
+%w</td><td>le jour de la semaine en chiffre, de 0 (dimanche) à 6 (samedi)
+</td></tr><tr><td>
+%W</td><td>la semaine (commençant par un lundi) en chiffre, de 00 à 53; les jours avant le premier lundi appartiennent à la semaine 00
+</td></tr><tr><td>
+%x</td><td>la date selon la représentation conforme à la locale
+</td></tr><tr><td>
+%X</td><td>l'heure selon la représentation conforme à la locale
+</td></tr><tr><td>
+%y</td><td>l'année sur deux chiffres, de 00 à 99
+</td></tr><tr><td>
+%Y</td><td>l'année sur quatre chiffres, de 1901 à 2038
+</td></tr><tr><td>
+%z</td><td>(non documenté mais valide en python 2.7) "0200" pour 2h de décalage horaire.
+</td></tr><tr><td>
+%Z</td><td>la zone horaire
+</td></tr></tbody></table>
+<p></p><p class="alt">
+Les formatages %C, %D, %s, %u et %z sont valables en python3
+
+
+<kbd>time.strptime(chaine,"format"])</kbd> retourne un tuple au format <kbd>localtime/gmtime</kbd> basé sur l'interprétation d'une chaîne à travers les éléments de formatage représentés ci-dessus:
+</p><pre>&gt;&gt;&gt; time.strptime("2012.12.25","%Y.%m.%d")
+time.struct_time(tm_year=2012, tm_mon=12, tm_mday=25, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=1, tm_yday=360, tm_isdst=-1)
+</pre><p>
+<kbd>time.timezone</kbd> contient la valeur du décalage en secondes de l'heure locale avec le temps universel (négatif si 0h local arrive avant 0hUT)<br>
+<kbd>time.altzone</kbd> contient la valeur du décalage en secondes de l'heure locale d'été avec le temps universel (négatif si 0h local arrive avant 0hUT)<br>
+<kbd>time.daylight</kbd> =1 si l'heure d'été est à considérer<br>
+<kbd>time.tzname</kbd> est un tuple contenant les noms de la <a href="http://www.timeanddate.com/library/abbreviations/timezones/" class="x">zone horaire</a> et de son homologue «heure d'été» en cours<br>
+<kbd>time.tzset()</kbd> initialise la zone horaire
+</p><p>
+Le module <kbd>pytz</kbd> existe également (installer le paquet <kbd>python-tz</kbd>)
+</p><pre>import pytz
+for i in pytz.all_timezones:
+  print i
+</pre>
+
+<h4 id="timeit">timeit <sup>Nv. 2015.01</sup></h4>
+<p>
+Il est encore possible de tester la rapidité d'une méthode avec la ligne de commande suivante (en UNIX, du moins). L'option <kbd>-m</kbd> permet de charger le module, <kbd>s</kbd> de définir les chaînes, entre guillemets, sans oublier les éventuelles indentations. Les commandes sont réitérées un nombre suffisant de fois (une puissance de 10) pour atteindre un certain temps, et de tests, le plus rapide est retourné:
+</p><pre>$ python -m timeit -s "a='azerty'" "a=a[1:]+a[0]"
+1000000 loops, best of 3: 0.204 usec per loop
+</pre><p>
+<kbd>-n x</kbd> fixe à x le nombre de réitérations des commandes<br>
+<kbd>-r 5</kbd> porte à 5 le nombre de tests<br>
+<kbd>-t</kbd> comportement de time.time(), par défaut sur UNIX<br>
+<kbd>-c</kbd> time.clock(), par défaut sur Windows<br>
+<kbd>-s</kbd> chaîne à ne faire qu'une fois<br>
+
+
+
+</p><h3 id="os"><a href="http://www.jchr.be/python/modules.htm#">1.3</a> <kbd>os</kbd> (système d'exploitation)</h3>
+<p>
+<kbd>os.system()</kbd> permet une commande de console <kbd>bash</kbd> ou <kbd>DOS</kbd>: <kbd>os.system("dir")</kbd>
+</p><p>
+<kbd>os.popen</kbd> permet de récupérer la sortie d'une commande-système, à passer comme le nom d'un fichier que l'on ouvre. Dans l'exemple qui suit, <kbd>acpi -t</kbd> retourne une chaîne contenant la température du processeur:
+</p><pre>sortie = os.popen("acpi -t", "r")
+texte = sortie.read()
+sortie.close()
+print texte
+</pre><p>
+<kbd>os.uname()</kbd> renvoie le tuple (os, station, kernel, datekernel, processeur) de la machine exécutant le script.
+</p><p>
+Les variables d'environnement permettent d'écrire des chemins d'accès indépendamment de la plateforme:
+</p><p>
+<kbd>os.name</kbd> Nom du système UN*X: <kbd>posix</kbd> ; <kbd>nt</kbd>, <kbd>os2</kbd>, <kbd>mac</kbd>, <kbd>ce</kbd>, <kbd>riscos</kbd>...<br>
+<kbd>os.path</kbd> UN*X: <kbd>&lt;module 'posixpath' from '/usr/lib/python2.5/posixpath.pyc&gt;</kbd><br>
+<kbd>os.curdir</kbd> répertoire actuel. UN*X et Win: <kbd>.</kbd> , Mac: <kbd>:</kbd><br>
+<kbd>os.pardir</kbd> répertoire parent. UN*X et Win: <kbd>..</kbd> , Mac: <kbd>::</kbd><br>
+<kbd>os.sep</kbd> séparateur de répertoire - UN*X: <kbd>/</kbd>, Win: <kbd>\</kbd>, Mac: <kbd>:</kbd>
+</p><p>
+Avec python, <kbd>os.pardir+os.sep+"repertoire"+os.sep+"fichier"</kbd> devrait fonctionner pour remonter d'un répertoire, ouvrir un autre et désigner un fichier, pour toute plateforme.
+</p><p>
+<kbd>os.altsep</kbd> UN*X: <kbd>None</kbd><br>
+<kbd>os.pathsep</kbd> séparateur de chemins - UN*X: <kbd>:</kbd> , Win: <kbd>;</kbd> <br>
+<kbd>os.defpath</kbd> retourne ou détermine le chemin des exécutables.
+</p><p>
+Avec UN*X, <kbd>print os.defpath</kbd> donne <kbd>:/bin:/usr/bin</kbd><br>
+Pour les déterminer: <kbd>os.path=':bin:/usr/bin:/usr/X11R6/bin'</kbd>
+</p><p>
+<kbd>os.linesep</kbd> séparateur de paragraphes - UN*X: <kbd>'\n'</kbd> (octet 10), Mac: <kbd>\r</kbd> (octet 13), Win: <kbd>\r\n</kbd>
+</p><p>
+<kbd>os.walk</kbd> produit un générateur capable de délivrer de façon récursive une série de tuples de trois éléments:
+le premier est le nom du répertoire, le second la liste de ses sous-répertoires et le troisième la liste de ses fichiers.
+</p><pre>#! /usr/bin/python
+# -*- coding: utf-8 -*-
+import os
+for rep, sous, fich in os.walk("/home/toto"):
+  print "\nRép:", rep
+  print "  S-R:", sous
+  print "  Fic:", fich
+</pre>
+
+<h4>Module <kbd>glob</kbd> <sup>2015.08.30</sup></h4>
+<p>
+Lorsqu'on dispose a priori du répertoire dans lequel cherche un ensemble de fichier, il est possible d'utiliser le module <kbd>glob</kbd>, duquel la méthode <kbd>glob</kbd> renvoie une liste et <kbd>iglob</kbd> un générateur, à partir d'un canevas comprenant les jokers <kbd>?</kbd> (caractère isolé) et <kbd>*</kbd> (chaîne de 0, un ou plusieurs caractères):
+</p><pre>#! /usr/bin/python
+# -*- coding: utf-8 -*-
+import glob
+for i in glob.glob("images/G?????e*.jp*"):
+  print i
+</pre>
+<p>
+retourne <kbd>Galaxies.jpg</kbd> et <kbd>Gutenberg.jpeg</kbd> si ces deux fichiers se trouvent dans le répertoire <kbd>images</kbd>: ils répondent à <kbd>G·····e[ ].jp[ ]</kbd> (<kbd>[ ]</kbd> symbolise un nombre indéfini de caractère(s), 0 compris). <kbd>galaxies.jpg</kbd> n'est pas valable, à cause du <kbd>g</kbd> initial minuscule.
+
+
+</p><h4 id="droits">Les droits</h4>
+<p>
+En UN*X, un fichier n'est pas nécessairement accessible à tous en ce qui concerne la lecture, l'écriture ou l'exécution (pour un répertoire, l'exécution équivaut à l'ouverture).
+</p><p>
+<kbd>os.chown(fichier,usr,grp)</kbd> fixe le propriétaire et le groupe, exprimés sous forme de nombres<br>
+<kbd>os.chmod(fichier, mode)</kbd> fixe les attributs du fichier en trois chiffres octaux. Le premier concerne le propriétaire du fichier, le second un groupe, et le troisième tout le monde. Chaque chiffre a une valeur de 0 à 7, addition de 4 s'il doit être lisible, 2 modifiable et 1 exécutable. <kbd>0754</kbd>  donne tous les droits (4+2+1) au propriétaire, les droits de lecture et d'exécution (4+1) pour le groupe spécifié et uniquement de lecture (4) à tout le monde (rappel: un nombre commençant par un zéro désigne un nombre octal. <span class="alt">Rappel: en python3, un nombre octal commence par 0o (zéro + lettre 'o').</span><br>
+<kbd>os.access(fichier,mode)</kbd> retourne <kbd>TRUE</kbd> selon les possibilités d'accès à un fichier. <kbd>mode = os.F_OK</kbd> pour l'existence, <kbd>os.R_OK</kbd> pour la lecture, <kbd>os.W_OK</kbd> pour la modification, <kbd>os.X_OK</kbd> pour l'exécution du fichier (ou l'ouverture du répertoire).
+
+
+</p><h4 id="fichiers">Édition de fichiers</h4>
+<p>
+Cette partie double la <a href="http://www.jchr.be/python/manuel.htm#fichtxt" class="p">gestion des fichiers</a> disponible dans le python "sans module". De ce fait, il risque d'avoir des doublons si vous importez de la façon suivante: <kbd>from os import *</kbd> . Avec <kbd>import os</kbd>, par contre, <kbd>file()</kbd> de python ne sera pas confondu avec <kbd>os.file()</kbd> du module <kbd>os</kbd>.
+</p><p>
+<kbd>descr=open(chaine,flags,mode)</kbd> ouvre un fichier. <kbd>flags</kbd> admet les variables suivantes: O_RDONLY (=0), O_WRONLY (=1), O_RDWR (=2), O_CREAT (=64), O_APPEND (=1024), O_BINARY (MS seulement)... on les compose en les additionnant ou avec le "ou" logique "|". <kbd>mode</kbd> (facultatif): voir les
+<a href="http://www.jchr.be/python/modules.htm#droits">droits</a> ci-dessus.
+</p><p>
+<kbd>os.read(descr,n)</kbd> retourne une chaîne de n octets du contenu d'un fichier ouvert en 0 ou 1<br>
+<kbd>os.write(descr,chaine)</kbd> écrit une chaîne dans un fichier (en écrasant ou en ajout selon le mode d'ouverture)<br>
+<kbd>os.close(descr)</kbd> ferme un fichier<br>
+<kbd>os.lseek(descr,n,mode)</kbd> positionne le curseur d'un fichier selon un offset <kbd>n</kbd>, selon le mode: SEEK_SET
+(=0: à partir du début), SEEK_CUR (=1, à partir de la position courante), SEEK_END (=2: à partir de la fin)<br>
+<kbd>os.remove(fichier)</kbd> détruit un fichier si droit d'écriture<br>
+<kbd>os.rename(ancien,nouveau)</kbd> renomme un fichier ou un répertoire
+
+
+</p><h4 id="repertoires">Gestion des répertoires</h4>
+<p>
+<kbd>os.getcwd()</kbd> renvoie le répertoire courant connu du système. Si un script est appelé par
+l'interface graphique, <kbd>os.path.dirname(sys.argv[0])</kbd> est plus exact<br>
+<kbd>os.chdir(repertoire)</kbd> pénètre dans un répertoire existant<br>
+<kbd>os.chdir("..")</kbd> (UN*X ou MS) ou <kbd>chdir("::")</kbd> (Mac) ou plus universellement<kbd>
+chdir(os.pardir)</kbd> remonte d'un niveau de répertoire
+</p><p>
+<kbd>os.listdir(getcwd())</kbd> renvoie une liste de tous les objets du répertoire courant<br>
+<kbd>os.walk(rep)</kbd> est un générateur renvoyant des tuples ('répertoire',[sous-répertoires],[fichiers])
+</p><pre>import os
+for rep, sous, fich in os.walk("/home/toto"):
+  print "\nRép:",rep
+  print "  S-R:",sous
+  print "  Fic:",fich
+</pre><p>
+<kbd>os.mkdir(repertoire,mode)</kbd> crée un répertoire dans le répertoire courant, mode 0777 par défaut<br>
+<kbd>os.makedirs(chemin,mode)</kbd> crée tout un chemin dans le répertoire courant, mode 0777 par défaut<br>
+<kbd>os.rmdir(repertoire)</kbd> détruit un répertoire (en principe vide) si droit d'écriture
+
+
+</p><h4 id="ospath">Sous-module <kbd>os.path</kbd></h4>
+<p>
+Le sous-module <kbd>os.path</kbd> est automatiquement chargé avec <kbd>import os</kbd>, mais peut être chargé à part avec <kbd>import os.path</kbd>. Il indique les attributs d'un fichier (nom, taille, chemin...) sans qu'il ne soit nécessaire de l'ouvrir: c'est le système qui répond.
+</p><p>
+<kbd>os.path.getsize(fichier)</kbd> retourne la taille (entier long)<br>
+<kbd>os.path.getmtime(fichier)</kbd> retourne la date de la dernière modification d'un fichier (idem)<br>
+<kbd>os.path.getatime(fichier)</kbd> retourne la date du dernier accès à un fichier (en nombre de secondes, voir <a href="http://www.jchr.be/python/modules.htm#time">1.2</a> 'time'
+</p><p>
+<kbd>os.path.dirname(cheminfichier)</kbd> retourne la partie de l'adresse à gauche du dernier séparateur de répertoire (<kbd>/</kbd>, <kbd>\</kbd>, <kbd>:</kbd>...)<br>
+<kbd>os.path.basename(cheminfichier)</kbd> retourne la partie de l'adresse à droite du dernier séparateur de répertoire<br>
+<kbd>os.path.split(cheminfichier)</kbd> retourne un tuple avec les résultats de dirname et basename<br>
+<kbd>os.path.abspath(fichier)</kbd> renvoie l'adresse absolue du nom de fichier précisé<br>
+<kbd>os.path.expanduser(fichier)</kbd> complète une chaîne commençant par <kbd>~/</kbd><br>
+<kbd>os.path.realpath(adresse)</kbd> élimine les <kbd>/.</kbd> et réduit les <kbd>/rep/..</kbd><br>
+<kbd>os.path.splitext("nom.ext")</kbd> retourne le tuple <kbd>('nom', '.ext')</kbd>
+</p><p>
+<kbd>os.path.exists(fichier)</kbd> renvoie <kbd>True</kbd> si le fichier existe<br>
+<kbd>os.path.isfile(fichier)</kbd> renvoie <kbd>True</kbd> si l'objet est un fichier<br>
+<kbd>os.path.isdir(fichier)</kbd> renvoie <kbd>True</kbd> si l'objet est un répertoire<br>
+<kbd>os.path.islink(fichier)</kbd> renvoie <kbd>True</kbd> si l'objet est un lien<br>
+<kbd>os.path.ismount(chemin)</kbd> renvoie <kbd>True</kbd> si le répertoire est un point de montage<br>
+<kbd>os.path.isabs(fichier)</kbd> renvoie <kbd>True</kbd> si le nom du fichier comporte le chemin complet
+</p><p>
+<kbd>dir(os.path)</kbd> informe sur les méthodes du sous-module os.path
+</p><p>
+Voir également la <a href="http://www.jchr.be/python/recettes.htm#repertoire" class="p">recette</a> pour naviguer dans un répertoire ou lister les fichiers.
+
+
+</p><h2 id="nombres"><a href="http://www.jchr.be/python/modules.htm#">2.</a> Nombres</h2>
+
+<h3 id="math"><a href="http://www.jchr.be/python/modules.htm#">2.1</a> <kbd>(c)math</kbd> (mathématique)</h3>
+<h5>Voir <a href="http://www.jchr.be/python/manuel.htm#opnum" class="p">Opérateurs basiques</a>.</h5>
+<p>
+<kbd>math.__doc__</kbd> ne nous renseigne que sur sa conformité au C.
+</p><p>
+<kbd>math.pi</kbd> retourne une approximation de la constante pi: 3.1415926535897931<br>
+<kbd>math.degrees()</kbd> et <kbd>radians()</kbd> transforment en degrés ou en radians<br>
+<kbd>math.cos(), math.sin(), math.tan()</kbd> rapports trigonométriques usuels<br>
+<kbd>math.acos(), math.asin(), math.atan()</kbd> rapports trigonométriques inverses<br>
+<kbd>math.cosh(), math.sinh(), math.tanh()</kbd> rapports trigonométriques hyperboliques
+</p><p>
+<kbd>math.atan2(y,x)</kbd> donne l'arctangente de la valeur y/x
+</p><p>
+<kbd>math.e</kbd> retourne une approximation de la constante e: 2.7182818284590451<br>
+<kbd>math.exp()</kbd> exponentielle à base e<br>
+<kbd>math.log()</kbd> logarithme naturel (base e)<br>
+<kbd>math.log10()</kbd> logarithme en base 10
+</p><p>
+<kbd>math.pow(x,y)</kbd> renvoie x à la puissance y<br>
+<kbd>math.sqrt()</kbd> renvoie la racine carrée<br>
+<kbd>math.hypot(x,y)</kbd> renvoie l'hypothénuse pour un triangle rectangle de côtés x et y
+</p><p>
+<kbd>math.fabs()</kbd> renvoie la valeur absolue (notation décimale)<br>
+<kbd>math.fmod(x,y)</kbd> renvoie le reste (notation décimale) de x modulo y<br>
+<kbd>math.modf()</kbd> renvoie un tuple (partie décimale, partie entière) d'un "réel"<br>
+<kbd>math.ldexp(x,y)</kbd> renvoie x*y**2, soit x fois y exposant 2<br>
+<kbd>math.frexp()</kbd> renvoie un tuple <kbd>(x,y)</kbd>, où <kbd>x</kbd> est la fraction du nombre <kbd>2**y</kbd>:
+</p><pre>&gt;&gt;&gt; frexp(9)
+(0.5625, 4)
+</pre><p>
+<kbd>math.ceil()</kbd> arrondissement par excès d'un nombre "réel"<br>
+<kbd>math.floor()</kbd> arrondissement par défaut d'un nombre "réel"
+
+</p><h4> <kbd>cmath</kbd></h4>
+<p>
+Le module <kbd>cmath</kbd> reprend la plupart des méthodes du module <kbd>math</kbd> pour les nombres complexes <kbd>a+bj</kbd> :
+</p><p>
+<kbd>cmath.pi, cmath.e, cmath.log, cmath.log10, cmath.exp, cmath.sqrt<br>
+cmath.cos(), cmath.sin(), cmath.tan(), cmath.acos(), cmath.asin(), cmath.atan()<br>
+cmath.cosh(), cmath.sinh(), cmath.tanh(), cmath.acosh(), cmath.asinh(), cmath.atanh()</kbd>
+
+
+</p><h3 id="random"><a href="http://www.jchr.be/python/modules.htm#">2.2</a> <kbd>random</kbd> (hasard)</h3>
+<p>
+Le module <kbd>random</kbd> regroupe des méthodes de hasard et probabilités. Le module <kbd>whrandom</kbd> (intégrant l'algorithme Wichmann-Hill), qui présentait des améliorations au niveau de la réinitialisation de la «graine aléatoire», est supprimé depuis python 2.5.
+</p><p>
+<kbd>random.choice(liste)</kbd> choisit un élément d'une liste: <kbd>random.choice([1,'a',125,'ouiche'])</kbd><br>
+<kbd>random.sample(liste,n)</kbd> renvoie une liste de n éléments choisis d'une liste<br>
+<kbd>random.shuffle(liste)</kbd> mélange les éléments d'une liste
+</p><p>
+<kbd>random.randint(borne1,borne2)</kbd> renvoie un entier au hasard entre deux bornes (incluses); préférer le suivant<br>
+<kbd>random.randrange(borne1,borne2,pas)</kbd> renvoie un entier entre la première borne (incluse) et la deuxième (exclue); le pas est optionnel<br>
+<kbd>random.randrange(borne2)</kbd> renvoie un entier entre 0 (inclus) et la deuxième un entier (exclu)
+</p><p>
+<kbd>random.seed(n)</kbd> (ré-)initialise le générateur de nombres pseudo-aléatoires<br>
+</p><p>
+<kbd>random.random()</kbd> renvoie un "réel" compris dans l'intervalle [0,1[<br>
+<kbd>random.uniform(r1,r2)</kbd> renvoie un "réel" compris dans l'intervalle [r1,r2[<br>
+</p><p>
+Les méthodes suivantes génèrent des nombres pseudo-aléatoires selon des distributions particulières: random.betavariate, random.cunifvariate, random.expovariate, random.gammavariate, random.gauss, random.lognormvariate, random.normalvariate, random.paretovariate, random.vonmisesvariate et random.weibullvariate. Exemple:
+</p><p>
+<kbd>print random.gauss(moyenne,ecart_type)</kbd> sort un "réel" selon les probabilités d'une distribution <i>normale</i> (d'autant plus probable que proche de la moyenne)
+</p><p>
+random.BPF, random.LOG4, random.NV_MAGICCONST, random.SG_MAGICCONST et random.TWOPI sont les variables disponibles.
+
+<!--getstate, jumpahead-->
+
+</p><h3 id="decimal"><a href="http://www.jchr.be/python/modules.htm#">2.3</a> <kbd>decimal</kbd></h3>
+<p>
+<kbd>decimal</kbd> (nouveauté python 2.3) permet de traiter les nombres "réels" (exprimé sous forme de chaîne) tels qu'ils sont, et non leur équivalent binaire:
+</p><pre>import decimal
+print 1 % .1     # l'imprécision sur l'équivalent binaire de .1 donnera le reste .09999999999999995, ou .1
+print decimal.Decimal(1) % decimal.Decimal(".1") # donne 0.0 puisque qu'il n'y a pas de reste
+print decimal.negInf # donne Decimal("-Infinity"): de nouveau "nombres" existent dans ce module
+</pre><p>
+<kbd>decimal.setcontext(decimal.ExtendedContext)</kbd> permet
+</p><pre>&gt;&gt;&gt; decimal.Decimal(0)/decimal.Decimal(0)
+Decimal("NaN")
+</pre><p>
+Les modules <kbd>math</kbd> et <kbd>cmath</kbd> peuvent traiter les nombres issus du module <kbd>decimal</kbd>, mais les réponses sont converties en nombres "réels".
+
+
+</p><h2 id="chaines"><a href="http://www.jchr.be/python/modules.htm#">3.</a> Chaînes</h2>
+
+<h3 id="string"><a href="http://www.jchr.be/python/modules.htm#">3.1</a> <kbd>string</kbd> (chaînes)</h3>
+<h5>Voir également <a href="http://www.jchr.be/python/manuel.htm#chaines" class="p">chaîne</a> dans le manuel.</h5>
+<p>
+Il est possible de ne pas charger le module <kbd>string</kbd>, en utilisant la forme <kbd>variable.methode()</kbd>. <b>Attention!</b> la chaîne d'origine n'est pas affectée par les modifications, le résultat doit être récupéré par une variable: <kbd>variable=chaine.methode()</kbd>.
+</p><p>
+Pour une variable dénommée <kbd>chaine</kbd>:
+</p><p>
+<kbd>chaine.upper()</kbd> convertit en majuscule<br>
+<kbd>chaine.lower()</kbd> convertit en minuscule<br>
+<kbd>chaine.capitalize()</kbd> passe la première lettre de la chaîne en capitale<br>
+<kbd>chaine.title()</kbd> passe la première lettre de chaque mot de la chaîne en capitale<br>
+<kbd>chaine.swapcase()</kbd> transforme minuscules en majuscules et inversement
+</p><p>
+<kbd>chaine.split()</kbd> renvoie une liste de tous les mots (séparation: l'espace) d'une chaîne-phrase<br>
+<kbd>chaine.split('*')</kbd> le séparateur peut être une chaîne autre que l'espace<br>
+<kbd>chaine.split(' ',n)</kbd> on peut limiter le nombre de séparations effectuées<br>
+<kbd>' '.join(liste)</kbd> concaténation d'une liste (ou tuple) de chaînes (le séparateur est ici l'espace)<br>
+<kbd>string.join(liste,'sep')</kbd> cette forme oblige à charger le module au préalable
+</p><p>
+<kbd>chaine.startswith('pref')</kbd> renvoie <kbd>True</kbd> si la chaîne commence par le prefixe<br>
+<kbd>chaine.endswith('suf')</kbd> renvoie <kbd>True</kbd> si la chaîne termine par le suffixe<br>
+<kbd>chaine.strip()</kbd> ôte les espaces en début et fin de chaîne<br>
+<kbd>chaine.lstrip() / chaine.rstrip()</kbd> ôtent les espaces en début / fin de chaîne<br>
+<kbd>chaine.strip('car')</kbd> ôte les caractères précisés en début et fin de chaîne<br>
+<kbd>chaine.ljust(n)</kbd> remplit d'espaces à gauche pour que la chaîne fasse n caractères<br>
+<kbd>chaine.rjust(n)</kbd> remplit d'espaces à droite pour que la chaîne fasse n caractères<br>
+<kbd>chaine.center(n)</kbd> entoure la chaîne d'espaces pour qu'elle fasse n caractères<br>
+<kbd>chaine.zfill(n)</kbd> ajoute des 0 à gauche pour que la chaîne fasse n caractères<br>
+<kbd>chaine.expandtabs(n)</kbd> transforme les tabulations en n espaces (8 par défaut)
+</p><p>
+<kbd>chaine.count(ssch,debut,fin)</kbd> compte les occurrences de la sous-chaîne dans la chaîne, éventuellement entre deux positions<br>
+<kbd>chaine.find(ssch)</kbd> renvoie la position d'une sous-chaîne dans une chaîne (<kbd>0</kbd> pour la première position, <kbd>-1</kbd> si la sous-chaîne ne s'y trouve pas<br>
+<kbd>chaine.find(ssch,debut,fin)</kbd> renvoie la position d'une sous-chaine dans une chaine, en définissant les positions de début et de fin<br>
+<kbd>chaine.rfind(ssch,debut,fin)</kbd> pareil, mais en commençant par la fin
+</p><p>
+<kbd>chaine.replace(ssch1,ssch2,n)</kbd> remplace une sous-chaîne par une autre (éventuellement en limitant à n occurrences)<br>
+<kbd>rempl=string.maketrans(ch1,ch2)</kbd> définit un protocole de remplacements pour <kbd>translate</kbd><br>
+<kbd>chaine.translate(rempl[,suppr])</kbd> assigne les remplacements définis à une chaîne, avec une éventuelle chaîne des caractères à supprimer (dans ce cas, la suppression a lieu avant le remplacement). Exemple:
+</p><pre>from string import maketrans # style d'importation permettant de ne pas préfixer la méthode du nom du module
+rempl=maketrans("()&amp;","[]§")
+chaine="(Eggs&amp;Spam)"
+print chaine.translate(rempl)
+</pre><p>
+isdigit(), isalpha(), isalnum(), islower(), isupper(), istitle(), isspace() testent des chaînes.
+</p><p>
+string.whitespace, string.lowercase, string.uppercase, string.letters, string.digits, string.hexdigits, string.octdigits, string.punctuation, string.printable sont des chaînes de caractères spécifiques:
+</p><pre>&gt;&gt;&gt; print string.punctuation
+!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+&gt;&gt;&gt;string.whitespace
+'\t\n\x0b\x0c\r '
+</pre><p>
+...tabulation, nouvelle ligne, nouvelles lignes sans retour, retour à la ligne sans saut de ligne. <kbd>\n</kbd> peut dépendre du système.
+</p><p>
+<b>Notes</b>: les méthodes de conversions de chaînes en nombres <kbd>string.atoi()</kbd>, <kbd>string.atol()</kbd> et <kbd>string.atof()</kbd> sont abandonnées en faveur des méthodes internes <kbd>int()</kbd>, <kbd>long()</kbd> et <kbd>float()</kbd>, voir <a href="http://www.jchr.be/python/manuel.htm#varnum" class="p">Variables numériques</a>.
+
+<!--decode, encode-->
+
+</p><h3 id="unicode"><a href="http://www.jchr.be/python/modules.htm#">3.2</a> Chaîne <kbd>Unicode</kbd></h3>
+<p>
+Avec une console en ISO-8859-1. Documentation expérimentale.
+</p><p>
+<kbd>unicode(chaine,[encodage,errors=''])</kbd> crée une chaîne de type Unicode u""<br>
+Par défaut, c'est encodage "ascii" qui sera appliqué, ne traitant que les caractères ascii (&lt;128). Les autres codages sont "utf-8","latin-1","utf-85","cp1252","cp850"...<br>
+<kbd>error='strict'</kbd> (par défaut) renvoie l'erreur UnicodeDecodeError en cas de mauvais codage<br>
+<kbd>error='replace'</kbd> remplace tout caratère non reconnu par <kbd>\ufffd</kbd><br>
+<kbd>error='ignore'</kbd> supprime les caractères non reconnus
+</p><p>
+<kbd>ustr.encode("encodage"[,errors="strict"])</kbd>
+errors peut valoir 'ignore', 'replace'<br>
+<kbd>str.decode(encodage)</kbd>
+</p><pre>&gt;&gt;&gt; u'éà'
+u'\xe9\xe0'
+&gt;&gt;&gt; u"éà".encode("utf-8")
+'\xc3\xa9\xc3\xa0'
+&gt;&gt;&gt; '\xc3\xa9\xc3\xa0'.decode("utf-8")
+u'\xe9\xe0'
+&gt;&gt;&gt; print u'\xe9\xe0'
+éà
+</pre>
+
+<h4>Tests de chaîne Unicode</h4>
+<p>
+Pour la chaîne unicode <kbd>ustr</kbd>, les comparateurs rendent <kbd>True</kbd> sous condition:
+</p><p>
+<kbd>ustr.isalpha()</kbd> caractères alphabétiques<br>
+<kbd>ustr.isdigit()</kbd>, <kbd>ustr.isnumeric(...)</kbd> et <kbd>ustr.isdecimal()</kbd> caractères numériques<br>
+<kbd>ustr.isalnum()</kbd> si tous les caractères sont alphabétiques ou numériques<br>
+<kbd>ustr.isspace()</kbd> caractères espace , tabulation, retour...: " \t\n\r\v"<br>
+<kbd>ustr.islower()</kbd> ne contient aucun caractères majuscules<br>
+<kbd>ustr.isupper()</kbd> ne contient aucun caractères minuscules<br>
+<kbd>ustr.istitle()</kbd> si tous les premiers caractères des mots (et eux seuls) sont en capitale
+</p><p>
+Ces tests renvoient toujours <kbd>False</kbd> en cas de chaîne vide.
+
+
+</p><h4>Formatage</h4>
+<p>
+<kbd>ustr.center(n[,car])</kbd> retourne une chaîne entourée d'espaces dans une chaîne de <kbd>n</kbd> caractères. <kbd>car</kbd> propose un autre caractère de remplissage que l'espace.<br>
+<kbd>ustr.zfill(n)</kbd> remplit la gauche d'un nombre avec autant de zéros qu'il faut pour arriver à <kbd>n</kbd> caractères (ne limite pas la longueur de la chaîne à <kbd>n</kbd> caractères)<br>
+<kbd>ustr.expandtabs(n)</kbd> retourne une chaîne où des espaces remplacent les tabulations pour un alignement sur les colones octuples si <kbd>n</kbd> n'est pas précisé<br>
+</p><p>
+<kbd>ustr.lower()</kbd> retourne une chaîne Unicode en minuscules (même les lettres accentuées<br>
+<kbd>ustr.upper()</kbd> retourne une chaîne Unicode en majuscules (même les lettres accentuées<br>
+<kbd>ustr.swapcase()</kbd> retourne une chaîne avec changement de casse<br>
+<kbd>ustr.capitalize()</kbd> retourne une chaîne avec la première lettre en capitale<br>
+<kbd>ustr.title()</kbd> retourne une chaîne avec la première lettre de chaque mot en capitale<br>
+</p><p>
+
+<kbd>ustr.ljust(n[,"c"])</kbd> aligne <kbd>ustr</kbd> à gauche dans une chaîne de <kbd>n</kbd> caractères avec un remplissage d'espaces; "c" peut remplacer l'espace de remplissage éventuel<br>
+<kbd>rjust(n[,c])</kbd> aligne à droite dans une chaîne de <kbd>n</kbd> caractères; <kbd>c</kbd> peut remplacer l'espace de remplissage éventuel<br>
+<kbd>ustr.strip([c])</kbd> retourne une chaîne débarrassée des espaces (au sens large) l'entourant. <kbd>c</kbd> pour "éplucher" d'autres caractères<br>
+<kbd>ustr.lstrip([c])</kbd> seulement à gauche<br>
+<kbd>ustr.rstrip([c])</kbd> seulement à droite<br>
+
+
+</p><h4>Compter, chercher, remplacer</h4>
+<p>
+<kbd>ustr.count(usub[,start,end])</kbd> nombre de fois que la sous-chaîne se retrouve dans la chaîne ustr, éventuellement limitée à [start,end]. Attention: u"blabla" ne se retrouve qu'une fois dans u"blablabla"<br>
+<kbd>ustr.find(str[,start,end])</kbd> renvoie la première occurrence de str dans ustr, éventuellement limité dans la portion [start:end] de la chaîne (-1 si inexistante)<br>
+<kbd>ustr.rfind()</kbd> renvoie la dernière occurrence de str dans ustr, éventuellement limité dans la portion [start:end] de la chaîne (-1 si inexistante)<br>
+<kbd>ustr.index()</kbd> et <kbd>rindex()</kbd> comme find() mais ValueError au lieu de -1<br>
+<kbd>ustr.replace(old,new[,nb])</kbd> remplace les [n premières] occurrences old par new<br>
+</p><p>
+<kbd>ustr.startswith(sub[,start,end])</kbd> True si la chaîne commence avec sub (ou si <kbd>sub</kbd> est situé à la position <kbd>start</kbd>. <kbd>sub</kbd> peut être un tuple de chaînes à tester<br>
+<kbd>ustr.endswith(...)</kbd>
+
+
+</p><h4>Éclatements et liaisons</h4>
+<p>
+<kbd>ustr.partition(chaine)</kbd> renvoie un tuple en trois parties: la partie de chaîne Unicode jusqu'au séparateur, le séparateur puis le reste de la chaîne Unicode<br>
+<kbd>ustr.rpartition(chaine)</kbd> La première partie de la chaîne Unicode court jusqu'au dernier séparateur, le séparateur et puis le reste.<br>
+<kbd>ustr.split([sep,max])</kbd> renvoie une liste de chaînes découpées par un séparateur, avec un éventuel nombre maximal de coupures. <kbd>split([None,max])</kbd> pour un nombre limité de coupures avec l'espace comme séparateur<br>
+<kbd>ustr.rsplit([sep,max])</kbd> <br>
+<kbd>ustr.splitlines()</kbd> <br>
+<kbd>u"sep".join(liste)</kbd> retourne une chaîne résultat de la concaténation des chaînes d'une liste de chaînes (avec un éventuel séparateur)<br>
+</p><p>
+<kbd>ustr.translate(table)</kbd> retourne une chaîne où des caractères sont remplacés selon une table (ne semble pas fonctionner comme dans le module <kbd>string</kbd>)
+
+
+</p><h3 id="re"><a href="http://www.jchr.be/python/modules.htm#">3.3</a> <kbd>re</kbd> (expressions régulières)</h3>
+<h5>Voir également les expressions régulières en <a href="http://www.jchr.be/php/manuel.htm#regex" class="p">PHP</a> et pour les <a href="http://www.jchr.be/linux/gnome.htm#recherche" class="p">recherches de fichier</a> dans l'environnement Gnome.</h5>
+<p>
+Les expressions rationnelles, ou expressions régulières, permettent de décrire une multiplicité de chaînes à partir d'un ensemble de règles. Il s'agit d'une extension des <kbd>?</kbd> représentant un caractère quelconque et <kbd>*</kbd> pour un ensemble quelconque de caractères dans la recherche de fichiers. L'ensemble de règles que l'on donne est appelé motif (pattern), par exemple trois majuscules suivies du chiffre 5. Ce motif permet des comparaisons, des recherches ou remplacements dans une chaîne, ou un éclatement d'une chaîne selon un séparateur...
+
+
+</p><h4>Règles</h4>
+<p>
+<kbd>.</kbd> désigne n'importe quel caractère sauf un retour-chariot<br>
+<kbd>\w</kbd> désigne une lettre ou un chiffre (équivaut à [A-Za-z0-9])<br>
+<kbd>\W</kbd> désigne un caractère qui ne soit ni lettre ni chiffre<br>
+<kbd>\s</kbd> désigne un caractère "espace" (équivaut à [ \t\r\f\n]: '&nbsp; ', tabulation, retour-chariot, saut de ligne, nouvelle ligne)<br>
+<kbd>\S</kbd> désigne un caractère non espace tels que défini à la ligne précédente<br>
+<kbd>\d</kbd> désigne un chiffre; équivaut à [0-9]<br>
+<kbd>\D</kbd> désigne un caractère sauf les chiffres<br>
+<kbd>\b</kbd> désigne le backspace (0x08), mais seulement dans un intervalle
+</p><p>
+<kbd>[]</kbd> désigne un caractère selon des intervalles et des exclusions: <kbd>[a-d0-5]</kbd> permet un caractère qui va de <kbd>a</kbd> à <kbd>d</kbd> ou de <kbd>0</kbd> à <kbd>5</kbd>.<br>
+&nbsp; &nbsp; À l'intérieur de <kbd>[]</kbd>, <kbd>^</kbd> exclut un caractère: <kbd>[a-z^q]</kbd> décrit l'intervalle de <kbd>a</kbd>  à <kbd>z</kbd> , sans le <kbd>q</kbd> <br>
+<kbd>()</kbd> permet de traiter un groupe de caractères ou un choix<br>
+<kbd>|</kbd> permet un choix entre des (ensembles de) caractères: <kbd>(a|p)m</kbd> représente <b>am</b> ou <b>pm</b><br>
+</p><p>
+<kbd>?</kbd> le caractère (ou groupe) qui précède est optionnel: <kbd>roc(he)?</kbd> représente <b>roc</b> ou <b>roche</b><br>
+<kbd>*</kbd> le caractère (ou groupe) qui précède est répété un nombre indéfini de fois (dont 0 fois)<br>
+<kbd>+</kbd> le caractère (ou groupe) qui précède est présent au moins une fois: <kbd>m+</kbd> représente <b>m</b>,
+<b>mm</b>, <b>mmm</b>...<br>
+<kbd>{n}</kbd> le caractère (ou groupe) qui précède est répété exactement <kbd>n</kbd> fois<br>
+<kbd>{n,m}</kbd> le caractère (ou groupe) qui précède est répété de <kbd>n</kbd> à <kbd>m</kbd> fois: <kbd>(la){1,3}</kbd> représente <b>la</b>, <b>lala</b> ou <b>lalala</b><br>
+</p><p>
+<kbd>[A-Z]{3,5}\d+</kbd> représente les chaînes constituées de trois à cinq majuscules suivies d'au moins un chiffre
+</p><p>
+<kbd>\</kbd> permet de définir littéralement un caractère qui sert normalement au codage: <kbd>( ) [ ] { } . $ ^ | ? + * \</kbd><br>
+
+</p><h4>Demande-plancher (non greedy)</h4>
+<p>
+Les quantifiants <kbd>?</kbd>, <kbd>+</kbd>, <kbd>*</kbd> et <kbd>{}</kbd>  acceptent une demande-plancher (non greedy), s'ils sont suivi d'un <kbd>?</kbd>:
+</p><pre>import re
+rep=re.match(".*7",'abcd7e7')
+if rep: print rep.group()
+rep=re.match(".*?7",'abcd7e7')
+if rep: print rep.group()
+</pre><p>
+Ces deux motifs définissent une chaîne commençant par un nombre indéterminé de caractères et terminant par '7'. La première forme prend la plus grande suite de caractères indéterminés et le dernier '7':<kbd>
+abcd7e7</kbd>. La seconde forme est économe (non greedy): elle ne prend que les 4 premiers caractères indéterminés et le premier '7': <kbd>abcd7</kbd>.
+
+</p><h4>Limites de mots et de lignes</h4>
+<p>
+<kbd>\b</kbd> limite de mot: <kbd>\broc</kbd> permet <b>roc</b>, <b>roche</b>... mais pas <b>croc</b> ni <b>croche</b> (également valable pour les fins de mots)<br>
+<kbd>\B</kbd> pas de limite de mot: <kbd>roc\B</kbd> permet <b>croche</b>, <b>roche</b>... mais pas <b>roc</b> ni <b>accroc</b> (également valable pour les débuts de mots)<br>
+<kbd>^</kbd> en début d'expression indique que la chaîne recherchée doit correspondre à un début de ligne<br>
+<kbd>$</kbd> en fin d'expression indique que la chaîne recherchée doit correspondre à une fin de ligne<br>
+
+
+</p><h4>Utilisation</h4>
+<p>
+<kbd>match</kbd> permet la comparaison stricte d'un motif et d'une chaîne:
+</p><pre>import re
+rep= re.match("[A-Z]{4}\d+",'aBCDE123')
+if rep: print rep.group()
+</pre><p>
+<kbd>search</kbd> permet de savoir si un motif se retrouvent au moins une fois dans une chaîne. Dans l'exemple suivante, le <kbd>?</kbd> limite la réponse à <b>BCDE1</b>
+</p><pre>import re
+rep=re.search("[A-Z]{4}\d+?",'aBCDE123')
+if rep: print rep.group() # "4 majuscules et au moins un chiffre" est bien inclus dans 'aBCDE123'
+</pre><p>
+<kbd>sub(motif,rempl,chaine[,n])</kbd>permet des substitutions dans une chaîne, avec une éventuelle limite d'occurrence
+</p><pre>import re
+print re.sub("[A-Z]{2}",'0','ABCDE123') # tout couple de majuscules sera remplacé par 0
+</pre><p>
+<kbd>subn</kbd> idem, mais rend un tuple avec la nouvelle chaîne et le nombre de remplacements effectués
+</p><p>
+<kbd>split(motif,chaine[,n])</kbd> débite une chaîne dans une liste, avec une éventuelle limite d'occurrence
+</p><pre>import re
+print re.split("\d{2}",'ab92cde14ze') # le séparateur est ici toute chaîne de deux chiffres
+</pre><p>
+<b>Note:</b> il est possible de compiler préalablement le motif, pour ensuite utiliser en préfixe
+des méthodes décrites ci-dessus:
+</p><pre>import re
+motif=re.compile("\d{2}")
+print motif.split('ab92cde14ze')
+</pre>
+
+<h3 id="curses"><a href="http://www.jchr.be/python/modules.htm#">3.4</a> <kbd>curses</kbd> (print at, couleurs)</h3>
+<p>
+Ce module permet la <a href="http://www.jchr.be/python/manuel.htm#saisie" class="p">saisie</a> plus souple de caractère (et des touches de contrôle) et l'<a href="http://www.jchr.be/python/manuel.htm#print" class="p">affichage</a> plus poussé (couleurs, endroit précis) dans une console.
+Attention au préfixage des paramètres avec <kbd>curses</kbd>.
+</p><p>
+Sous Windows, on peut par exemple utiliser <a href="http://www.findbestopensource.com/product/wcurses" class="x">wcurses</a>.
+</p><p>
+<a href="http://docs.python.org/library/curses.html" class="x">Information officielle</a> par ordre alphabétique (.en)
+</p><p>
+Quoi qu'il en soit, il faut évidemment importer la bibliothèque avec <kbd>import curse</kbd>, <kbd>import wcurse</kbd> ou <kbd>import mcurse</kbd> selon le cas.
+
+</p><h4>Initialiser le processus</h4>
+<p>
+<kbd>ecran = curses.initscr()</kbd> définit un écran sur lequel tout va se passer
+</p><p>
+<kbd>curses.noecho()</kbd> permet de ne pas voir répéter sur l'écran ce qui est frappé au clavier<br>
+<kbd>curses.cbreak()</kbd> permet de ne pas devoir saisir avec [Enter] le caractère entré<br>
+<kbd>curses.curs_set(0)</kbd> rend le curseur invisible
+
+
+</p><h4>Fenêtres</h4>
+<p>
+<kbd>fenetre= curses.newwin(hauteur,largeur,origine_y,origine_x)</kbd> définit un espace dont les dimensions ne peuvent excéder les dimensions de la fenêtre console ouverte: hauteur + origine_y ne peut excéder le nombre de lignes, largeur + origine_x le nombre de colonnes (par exemple 23 et 79 pour une console 24*80).
+</p><p>
+<kbd>fenetre.refresh()</kbd> affiche <b>réellement</b> les caractères "écrits" par les méthodes suivantes<br>
+<kbd>fenetre.addch(car)</kbd> "écrit" un caractère à la position du curseur<br>
+<kbd>fenetre.addstr(chaine,mode)</kbd> "écrit" une chaîne à la position du curseur (<kbd>mode</kbd>: voir plus bas)<br>
+<kbd>fenetre.addch(y,x,car)</kbd> "écrit" un caractère à la position indiquée<br>
+<kbd>fenetre.addstr(y,x,chaine,mode)</kbd> "écrit" une chaîne à la position indiquée<br>
+<kbd>fenetre.move(y,x)</kbd> place le curseur à la position précisée. On peut de ce fait séparer le placement du curseur de la sortie de caractère (voir exemple).
+
+
+</p><h4>Terminer</h4>
+<p>
+<kbd>curses.curs_set(1)</kbd> rend le curseur visible si nécessaire<br>
+<kbd>curses.nocbreak()</kbd> rétablit la nécessité de saisir à l'aide de [Enter]<br>
+<kbd>curses.echo()</kbd> rétablit la répétition à l'écran du caractère saisi
+</p><p>
+<kbd>curses.endwin()</kbd> sort du processus et retour à la ligne de commande
+</p><pre>#! /usr/bin/python
+# -*- coding: utf-85 -*-
+"""Exemple minimal pour l'utilisation de curses - 2007-01-26 - www.jchr.be - GPL-2"""
+import curses, time
+ecran= curses.initscr()
+fenetre= curses.newwin(20,50,0,0)
+fenetre.move(10,15)  # placement du curseur ligne 10/colonne 15
+fenetre.addch('*')   # prévoit l'écriture de '*' à la position du curseur
+fenetre.refresh()    # écrit réellement ce qui a été prévu par addch() et addstr()
+time.sleep(2)        # attend deux secondes avant de...
+curses.endwin()      # ...revenir à la console
+</pre>
+
+<h4>L'espace pad (à préciser)</h4>
+<p>
+L'espace <kbd>pad</kbd> peut être plus grand que la fenêtre<br>
+</p><p>
+<kbd>plage= curses.newpad(200,200)</kbd> <br>
+<kbd>plage.addch(y,x,car,mode)</kbd> "écrit" un caractère; x, y et mode facultatifs<br>
+<kbd>plage.addstr(y,x,chaine,mode)</kbd> "écrit" une chaîne x, y et mode facultatifs<br>
+<kbd>plage.move(y,x)</kbd> déplace le curseur<br>
+<kbd>plage.refresh(0,0,y1,x1,y2,x2)</kbd> affiche réellement les caractère écrits, requiert 6 paramètres
+
+
+</p><h4>Saisie</h4>
+<p>
+<kbd>fenetre.getch()</kbd> saisie d'un caractère, retourne le code ascii&lt;256<br>
+<kbd>fenetre.nodelay()</kbd> n'attend pas<br>
+<kbd>fenetre.halfdelay(n)</kbd> attend n millisecondes<br>
+<kbd>fenetre.keypad(1)</kbd> mode permettant à <kbd>getch</kbd> de récupérer un code pour les touches spéciales (flèches, fonctions...)<br>
+<kbd>fenetre.keypad(0)</kbd> annule cette fonctionnalité
+</p><p>
+Des constantes contiennent les codes des touches spéciales:<br>
+<kbd>curses.KEY_LEFT, KEY_RIGHT, KEY_UP et KEY_DOWN; curses.KEY_F0</kbd> jusqu'à <kbd>KEY_F63<br>
+curses.KEY_HOME, KEY_PREVIOUS ou KEY_PPAGE, KEY_NEXT, KEY_BACKSPACE, KEY_ENTER, KEY_PRINT, KEY_BREAK</kbd>...
+</p><p>
+[Tab] renvoie 9, [Esc]= 27, [Del]= 330, [Ins]= 331,
+
+
+</p><h4>Modes et couleurs</h4>
+<p>
+Les fonctions de sorties <kbd>addch</kbd> et <kbd>addstr</kbd> utilisent le paramètre <kbd>mode</kbd> (facultatif): <kbd>curses.A_BLINK</kbd> (texte clignotant), <kbd>A_BOLD</kbd> (brillant), <kbd>A_DIM</kbd> (moins brillant), <kbd>A_REVERSE</kbd> (vidéo-inverse), <kbd>A_STANDOUT</kbd> (le plus clair), <kbd>A_UNDERLINE</kbd> (souligné)
+</p><p>
+Ces mêmes fonctions de sorties permettent la définition de paires de couleurs préalablement définies<br>
+<kbd>curses.init_pair(1,c_texte,c_fond)</kbd> définit la paire <kbd>1</kbd> pour les couleurs de texte et de fond<br>
+<kbd>ecran.addstr("Texte", curses.color_pair(1))</kbd> écrit la chaîne en utilisant la paire <kbd>1</kbd>
+</p><p>
+Les couleurs sont<kbd>
+curses.COLOR_BLACK, COLOR_RED, COLOR_GREEN, COLOR_YELLOW, COLOR_BLUE, COLOR_MAGENTA, COLOR_CYAN, COLOR_WHITE</kbd>
+
+
+</p><h4>Caractères semi-graphiques</h4>
+<p>
+Il est possible de composer des tableaux avec des lignes, croisements et coins: <kbd>curses.ACS_ULCORNER, ACS_LLCORNER, ACS_URCORNER, ACS_LRCORNER, ACS_RTEE, ACS_LTEE, ACS_BTEE, ACS_TTEE, ACS_HLINE, ACS_VLINE, ACS_PLUS</kbd>
+</p><p>
+PLUS= croisement, ULCORNER= coin haut/gauche, UR= haut/droit, LL= bas gauche, LR= bas droite;<br>
+Bords: TTEE= croisement de haut; BTEE= croisement de bas; LTEE= croisement de gauche; RTEE= croisement de droite;<br>
+VLINE= ligne verticale, HLINE= ligne horizontale
+</p><p>
+Il existe aussi certains caractères supplémentaires, comme <kbd>curses.ACS_BULLET, ACS_DEGREE, ACS_PLMINUS</kbd>
+</p><p>
+Un exemple d'utilisation (dont un tracé de tableau) sous forme de jeu de <a href="http://www.jchr.be/python/taquin.txt" class="p">taquin</a>
+</p><p>
+Informations complémentaires <a href="http://www.python.org/doc/2.3.5/lib/node221.html" class="x">ici</a>
+
+
+
+</p><h2 id="collections"><a href="http://www.jchr.be/python/modules.htm#">4.</a> Collections</h2>
+<p>
+Le module collections comporte plusieurs classes complétant les collections de Python: <kbd>deque</kbd>, <kbd>OrderedDict</kbd>, <kbd>UserDict</kbd>, <kbd>UserList</kbd>, <kbd>defaultdict</kbd>, <kbd>namedtuple</kbd> et <kbd>counter</kbd>.
+
+</p><h3 id="deque"><a href="http://www.jchr.be/python/modules.htm#">4.1</a> <kbd>deque</kbd></h3>
+<p>
+Le module Double-Ended QUEue traite des listes manipulables par le début ou la fin
+</p><pre>&gt;&gt;&gt; import collections
+&gt;&gt;&gt; deq=collections.deque((1,2,3,4,5,6)); deq
+deque([1, 2, 3, 4, 5, 6])
+</pre><p>
+<kbd>deq.append((6,7)</kbd> ajoute un élément en queue d'objet (ici, le tuple (6,7)<br>
+<kbd>deq.appendleft("ah!")</kbd> ajoute un élément en début d'objet (ici, la chaîne "ah!"<br>
+<kbd>deq.extend(["a","b","c"])</kbd> ajoute des éléments en queue d'objet<br>
+<kbd>deq.extendleft(["z","y","x","w"])</kbd> ajoute des éléments en début d'objet
+</p><p>
+Attention: dans ce dernier cas, l'objet donne <kbd>deque(['w', 'x', 'y', 'z', 1, 2, 3...])</kbd> 
+</p><p>
+<kbd>el=deq.pop()</kbd> enlève et retourne le dernier élément de l'objet<br>
+<kbd>el=deq.popleft()</kbd> enlève et retourne le premier élément de l'objet
+</p><p>
+<kbd>deq.clear()</kbd> vide l'objet de tous les éléments<br>
+<kbd>deq.remove(val)</kbd> enlève la première occurrence d'une valeur. <kbd>ValueError: deque.remove(x):
+x not in deque</kbd> si elle n'est pas rencontrée. Précaution:
+</p><pre>deq=collections.deque([1,2,3,4,5,6])
+if 7 in deq:
+  deq.remove(7)
+else:
+  return None
+</pre><p>
+<kbd>deq.rotate(n)</kbd> rotation des éléments de <kbd>n</kbd> rangs vers la droite. Si <kbd>n</kbd> est négatif, vers la gauche.
+</p><pre>&gt;&gt;&gt; import collections
+&gt;&gt;&gt; deq=collections.deque([1,2,3,4,5,6])
+&gt;&gt;&gt; deq.rotate(-2); deq
+deque([3,4,5,6,1,2])
+</pre><p>
+Voir le <a href="http://www.jchr.be/python/manuel.htm#collections" class="p">manuel</a> pour les fonctions <kbd>enumerate()</kbd>, <kbd>sorted()</kbd>, <kbd>reversed()</kbd>.
+
+
+</p><h3 id="counter"><a href="http://www.jchr.be/python/modules.htm#">4.2</a> <kbd>Counter</kbd></h3>
+<p>
+Cette collection a été intégrée dans Python2.7 (module <kbd>collections</kbd>).
+</p><p>
+<kbd>Counter</kbd> dénombre les occurrences des valeurs trouvées dans une collection, sous forme d'un dictionnaire où les clés sont les valeurs rencontrées et les valeurs le nombre de fois où les valeurs ont été trouvées:
+</p><pre>&gt;&gt;&gt; import collections
+&gt;&gt;&gt; occ=collections.Counter([1,3,5,4,5,2,1,1,5,4]); occ; occ[1]
+Counter({1: 3, 5: 3, 4: 2, 2: 1, 3: 1})
+3
+</pre>
+
+<h3 id="ordered"><a href="http://www.jchr.be/python/modules.htm#">4.3</a> <kbd>OrderedDict</kbd></h3>
+<p>
+Cette collection a été intégrée dans Python 2.7 (module <kbd>collections</kbd>)
+</p><p>
+Cette nouvelle classe concerne des dictionnaires qui se souviennent de l'ordre dans lequel on y a introduit les paires clé/valeur. Une redéfinition de clé laisse la paire concernée à sa place; un effacement suivi d'une réintroduction la place à la fin du dictionnaire. Il est possible d'introduire les éléments sous la forme habituelle aux dictionnaires ou de listes de paires.
+</p><pre>&gt;&gt;&gt; import collections
+&gt;&gt;&gt; dico=collections.OrderedDict({"c":123, "a":987}); dico
+OrderedDict([('a', 987), ('c', 123)])
+&gt;&gt;&gt; dico[j]=456; dico
+OrderedDict([('a', 4), ('c', 123), ('j', 456)])
+&gt;&gt;&gt; dico.update([(5,9),("f","fuji")]); dico
+OrderedDict([('a', 4), ('c', 123), ('j', 456), (5, 9),("f","fuji")])
+</pre><p>
+<kbd>dico.pop(cle)</kbd> retourne la valeur et supprime la paire clé/valeur selon la clé précisée<br>
+<kbd>dico.popitem(last=True)</kbd> retourne et supprime la dernière paire clé/valeur<br>
+<kbd>dico.popitem(last=False)</kbd> retourne et supprime la première paire clé/valeur<br>
+
+
+</p><h2 id="donnees"><a href="http://www.jchr.be/python/modules.htm#">4.</a> Sauvegarde des données</h2>
+<p>
+Ces trois modules permettent la sauvegarde, sous forme de fichiers, des objets python (chaînes, nombres, listes, tuples, dictionnaires...), et leur récupération.
+
+
+</p><h3 id="pickle"><a href="http://www.jchr.be/python/modules.htm#">5.1</a> <kbd>pickle</kbd> ou <kbd>cPickle</kbd></h3>
+<p>
+Le module <kbd>pickle</kbd> permet de transformer un objet python (nombre, liste, dictionnaire...)
+en un format archivable sous forme de fichier-texte, et de rétablir l'objet à partir d'un tel fichier.
+</p><p>
+<kbd>cPickle</kbd> est la réécriture en C du module <kbd>pickle</kbd> pour un gain de rapidité.
+
+
+</p><h4>Sauvegarder des variables</h4>
+<p>
+<kbd>dumps(objet)</kbd> (<kbd>dumps</kbd> avec <kbd>s</kbd>) transforme un objet-python en chaîne 'pickle':
+</p><pre>&gt;&gt;&gt;pickle.dumps({1:["oui"],3:"sdfg"})
+"(dp0\nI1\n(lp1\nS'oui'\np2\nasI3\nS'sdfg'\np3\ns."
+</pre><p>
+<kbd>arch=pickle.Pickler(monfichier)</kbd> initialise objet d'archive selon le descripteur <kbd>fichier</kbd> d'un fichier préalablement ouvert<br>
+<kbd>arch.dump(objet)</kbd> (<kbd>dump</kbd> sans <kbd>s</kbd>)sauvegarde l'objet<br>
+</p><pre>#! /usr/bin/python
+# -*- coding: latin-1 -*-
+import pickle
+var=[1,[5,6],'thrs',(1,2,3,4),{1:'un',2:'deux'}]
+
+fich=open('variable.txt','w')
+pickle.dump(var,fich)
+fich.close()
+</pre>
+
+<h4>Récupérer des variables</h4>
+<p>
+<kbd>loads(chaine)</kbd> (<kbd>loads</kbd> avec <kbd>s</kbd>) transforme une chaîne 'pickle' en objet-python:
+</p><pre>&gt;&gt;&gt;pickle.loads("(dp0\nI1\n(lp1\nS'oui'\np2\nasI3\nS'sdfg'\np3\ns.")
+{1:["oui"],3:"sdfg"}
+</pre><p>
+<kbd>objet=pickle.load(fich)</kbd> (<kbd>load</kbd> sans <kbd>s</kbd>) récupère l'objet sauvegardé dans un fichier
+</p><pre>#! /usr/bin/python
+# -*- coding: latin-1 -*-
+import pickle
+
+fich=open('variable.txt','r')
+var=pickle.load(fich)
+fich.close()
+print objet
+</pre>
+
+<h3 id="anydbm"><a href="http://www.jchr.be/python/modules.htm#">5.2</a> <kbd>anydbm</kbd> </h3>
+<p>
+Les bases de données manipulées par <kbd>anydbm</kbd> sont des dictionnaires où les clés et les
+valeurs sont nécessairement des chaînes, et sauvegardés sous forme de fichiers.
+</p><p>
+<kbd>mabase=anydbm.open('fichier','c')</kbd> crée une base de données (et y permet l'écriture)<br>
+<kbd>mabase['clef1']=valeur</kbd> stocke une valeur sous forme de chaîne ou de variable-chaîne<br>
+<kbd>mabase.close()</kbd> stocke les valeurs sur le disque et ferme la base de données
+</p><p>
+Les changements effectués sur un fichier ouvert en création ou écriture ne seront pris en compte
+que lors de sa fermeture.
+</p><p>
+<kbd>mabase=anydbm.open('fichier')</kbd> ouvre une base de données en lecture seule<br>
+<kbd>variable=mabase['clef1']</kbd> lit une variable selon la clé<br>
+<kbd>mabase=anydbm.open('fichier','w')</kbd> ouvre une base de données en écriture<br>
+</p><pre>#! /usr/bin/python
+import anydbm
+
+mabase=anydbm.open('fichier','c')
+mabase['cle1']='Bonjour'
+mabase['cle2']='tout le monde!'
+mabase.close()
+</pre><p>
+pour lire:
+</p><pre>#! /usr/bin/python
+import anydbm
+
+mabase=anydbm.open('fichier','c')
+for i in mabase:
+  print i,mabase[i],
+mabase.close()
+</pre><p>
+Les bases de données du module <kbd>anydbm</kbd>  se manipulent comme des
+<a href="http://www.jchr.be/python/manuel.htm#dict" class="p">dictionnaires</a>:
+</p><p>
+<kbd>mabase.pop('cle')</kbd> retourne et supprime l'entrée indexée par 'cle'<br>
+<kbd>mabase.has_key('cle')</kbd> vérifie (<kbd>True</kbd>) que la clé existe dans la base de données<br>
+<kbd>len(mabase)</kbd> retourne le nombre d'enregistrements de la base de données<br>
+<kbd>mabase.clear()</kbd> supprime tous les enregistrements de la base de données<br>
+<kbd>del mabase['clef1']</kbd> supprime une entrée selon la clé
+</p><p>
+<b>Notes:</b> les clés ne sont pas nécessairement inscrites dans l'ordre chronologique ou alphabétique des clés;
+d'autre part, les données ne sont pas stockées sur disque sous forme de ficher-texte et ne sont donc pas
+éditables par un éditeur de texte; enfin, la taille minimale d'un fichier anydbm est de 12 Kio.
+
+
+</p><h3 id="shelve"><a href="http://www.jchr.be/python/modules.htm#">5.3</a> <kbd>shelve</kbd></h3>
+<p>
+Les autres objets (nombres, tuples, listes, objets binaires, mais éventuellement des chaînes...) sont sauvegardés avec le module <kbd>shelve</kbd>  (les clés doivent être des chaînes). Les octets inférieurs à 32 ou supérieurs à 127 étant codés sur quatre octets (<kbd>\xhh</kbd>), un fichier binaire prend beaucoup de place dans un fichier <kbd>shelve</kbd>.
+</p><p>
+Cette base de données est un fichier, elle s'ouvre et se ferme comme un fichier:
+</p><pre>mabase=shelve.open('nomdefichier'[,'r'])
+ ...
+mabase.close()
+</pre><p>
+<kbd>'r'</kbd> pour une lecture seule d'une base de données existante, erreur si elle n'existe pas<br>
+<kbd>'w'</kbd> pour lecture/écriture d'une base de données existante, erreur si elle n'existe pas<br>
+<kbd>'n'</kbd> pour une nouvelle base de données, écrase une éventuelle base existante<br>
+<kbd>'c'</kbd> pour la lecture et l'écriture d'une base de données existante, la crée si elle n'existe pas
+</p><pre>#! /usr/bin/python
+# -*- coding: latin-1 -*-
+import shelve
+
+mabase=shelve.open('fichier','c')
+mabase['cle1']=[2,1,9,7,[8,5,4,8],5,0]
+mabase['cle2']=266
+mabase['cle3']={2:456,5:789}
+mabase['cle4']=(4,5,6,7,8,9)
+mabase['cle5']="les chaînes sont permises"
+mabase.close()
+
+mabase=shelve.open('fichier','r')
+for i in mabase:
+  print mabase[i]
+mabase.close()
+</pre><p>
+Il est également possible d'y inclure des fichiers binaires (dans l'exemple qui suit, image.jpg doit exister, dans le répertoire courant pour cet exemple):
+</p><pre>#! /usr/bin/python
+import shelve
+
+fichier=open('image.jpg','rb')   # rb pour lecture d'un fichier binaire
+img=fichier.read() # contient le fichier binaire
+fichier.close()
+
+mabase=shelve.open('fichier','c')
+mabase['cle']=img
+mabase.close()
+</pre><p>
+Les variables se gèrent comme des clés/valeurs des dictionnaires.
+</p><p>
+<kbd>liste=mabase.keys()</kbd> rassemble toutes les clés des données sauvées dans le fichier<br>
+<kbd>var=mabase.pop("cle2")</kbd> retourne la valeur définie par "cle2" et supprime la paire clé/valeur de <kbd>mabase</kbd><br>
+<kbd>if "cle3" in mabase:</kbd> ou <kbd>if mabase.has_key("cle3"):</kbd> teste l'existence de la clé "cle3" dans <kbd>mabase</kbd><br>
+<kbd>len(mabase)</kbd> retourne le nombre d'enregistrements de la base de données<br>
+<kbd>del mabase['cle2']</kbd> supprime la paire cle2/donnée de <kbd>mabase</kbd>
+</p><p>
+Attention: si une variable <kbd>var</kbd> tirée de <kbd>mabase["cle1"]</kbd> est modifiée, il est nécessaire de préciser <kbd>mabase["cle1"]=var</kbd> avant de fermer la base de donnée pour que les modifications y soient enregistrées. Pour ne pas devoir préciser ces changements, il est possible de préciser lors de l'ouverture:<br>
+<kbd>mabase=shelve.open("fichier", writeback=True)</kbd> <br>
+Pour une base de données comportant beaucoup de variables, cela peut ralentir le système.
+
+
+
+</p><h2 id="internet"><a href="http://www.jchr.be/python/modules.htm#">6.</a> Internet</h2>
+
+<h3 id="urllib"><a href="http://www.jchr.be/python/modules.htm#">6.1</a> <kbd>urllib</kbd> (téléchargement)</h3>
+<p>
+<kbd>descr=urlopen(url)</kbd> ouvre tout fichier. Le descripteur permet ensuite le travail<br>
+</p><p>
+<kbd>fichier=read(descr)</kbd> assigne le contenu du fichier à la variable fichier<br>
+<kbd>ligne=readline(descr)</kbd> assigne (une par) une ligne du contenu du fichier à la variable ligne<br>
+<kbd>liste=readlines(descr)</kbd> assigne chaque ligne comme élément d'une liste<br>
+<kbd>descr.close()</kbd> ferme le fichier
+</p><p>
+<kbd>quote(chaine)</kbd> remplace les caractères spéciaux par leur équivalent %xx<br>
+<kbd>quote(chaine,safe="&amp;?")</kbd> permet le non-remplacement des caractères spécifiés par safe<br>
+<kbd>quote_plus(chaine)</kbd> idem, mais remplace les espaces par des '+' (admet également safe)<br>
+<kbd>unquote(chaine)</kbd> remplace les %xx par les caractères<br>
+<kbd>unquote_plus(chaine)</kbd> idem, mais remplace les '+' par ' '
+</p><p>
+<kbd>urlencode(dictionnaire)</kbd> encode une chaine de requête à partir d'un dictionnaire (ou de tuples de paires)
+</p><pre>&gt;&gt;&gt; urllib.urlencode({"val":456,"sens":"page up"})
+'sens=page+up&amp;val=456'
+</pre>
+
+</article>
+
+<footer>
+<a href="http://www.jchr.be/python/modules.htm#">haut</a>
+</footer>
+
+
+
+</body></html>
