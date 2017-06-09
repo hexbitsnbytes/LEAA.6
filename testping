@@ -1,0 +1,10 @@
+#!/bin/bash
+while getopts ":f" opt; do
+	case $opt in
+		-f)
+			for i in $(cat $1); do fping $i; done
+		;;
+		*)
+			echo "Usage: $0 -f input_file" >&2
+	esac
+done

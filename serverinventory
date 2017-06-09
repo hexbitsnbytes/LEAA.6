@@ -1,0 +1,17 @@
+#!/bin/bash
+# This script return a list of servers names alongside IP addresses. 
+# Those servers respond to pings based on a dns CSV export file.
+# It takes one argument, which is the path to the CSV export file.
+# it uses two temporary files which are deleted at the end. 
+dnsexport=$1
+temp_file=".temp_file.txt"
+temp_file2=".temp_file2.txt"
+output_location="/home/louis/Documents/dns_clean/list_of_servers$(date +%Y%m%d)$(date +%H%M)"
+
+echo -n "$0 is now running... Be patient!"
+cat $dnsexport | awk 'BEGIN{FS=","}; {print $1}' | fping | grep "is alive" > $temp_file
+cat $temp_file | uniq | awk '{print $1}' > $temp_file2 
+for i in $(cat $temp_file2); do host $i | awk '/iperceptions.com/{ print $1,$4}'; done > $temp_file
+mv $temp_file $output_location 
+rm $temp_file2
+exit $?
